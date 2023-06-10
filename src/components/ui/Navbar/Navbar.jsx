@@ -1,4 +1,4 @@
-import {Link, NavLink, useNavigate} from 'react-router-dom';
+import { Link, NavLink, useNavigate } from 'react-router-dom';
 
 
 const Navbar = () => {
@@ -19,35 +19,35 @@ const Navbar = () => {
                 <div className="navbar-nav">
 
                     <NavLink
-                        className={ ({isActive}) => `nav-item nav-link  ${ isActive ? 'active':'' }` }
+                        className={({ isActive }) => `nav-item nav-link  ${isActive ? 'active' : ''}`}
                         to="/films"
                     >
                         Films
                     </NavLink>
 
                     <NavLink
-                        className={ ({isActive}) => `nav-item nav-link  ${ isActive ? 'active':'' }` }
-                        to="/peoples"
+                        className={({ isActive }) => `nav-item nav-link  ${isActive ? 'active' : ''}`}
+                        to="/people"
                     >
-                        Peoples
+                        People
                     </NavLink>
 
                     <NavLink
-                        className={ ({isActive}) => `nav-item nav-link  ${ isActive ? 'active':'' }` }
+                        className={({ isActive }) => `nav-item nav-link  ${isActive ? 'active' : ''}`}
                         to="/planets"
                     >
                         Planets
                     </NavLink>
 
                     <NavLink
-                        className={ ({isActive}) => `nav-item nav-link  ${ isActive ? 'active':'' }` }
+                        className={({ isActive }) => `nav-item nav-link  ${isActive ? 'active' : ''}`}
                         to="/starships"
                     >
                         Starships
                     </NavLink>
 
                     <NavLink
-                        className={ ({isActive}) => `nav-item nav-link  ${ isActive ? 'active':'' }` }
+                        className={({ isActive }) => `nav-item nav-link  ${isActive ? 'active' : ''}`}
                         to="/vehicles"
                     >
                         Vehicles
