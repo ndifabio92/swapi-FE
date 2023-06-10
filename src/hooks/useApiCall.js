@@ -1,6 +1,6 @@
 import { useState, useEffect } from 'react';
 
-const useApiCall = (resource,name="", page = "1") => {
+const useApiCall = (resource, page = "1", name = "") => {
   const [data, setData] = useState([]);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState(null);
@@ -24,7 +24,7 @@ const useApiCall = (resource,name="", page = "1") => {
     };
 
     fetchData();
-  }, [resource,page]);
+  }, [resource, page, name]);
   return { data, loading, error };
 };
 
