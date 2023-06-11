@@ -11,13 +11,15 @@ export const SwapiRoutes = () => {
     return (
         <>
             <Navbar />
-            <Routes>
-                <Route path="/" element={<HomePage />} />
-                <Route path="/films" element={<Films />} />
-                <Route path="/people" element={<People />} />
+            <div style={{ marginLeft: "32px", marginRight: "32px" }}>
+                <Routes >
+                    <Route path="/" element={<HomePage />} />
+                    <Route path="/films" element={<Films />} />
+                    <Route path="/people" element={<People />} />
 
-                <Route path="*" element={<NotFound />} />
-            </Routes>
+                    <Route path="*" element={<NotFound />} />
+                </Routes>
+            </div>
         </>
     )
 }

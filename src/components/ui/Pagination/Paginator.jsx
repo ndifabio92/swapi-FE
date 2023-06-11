@@ -1,7 +1,12 @@
 import React from "react";
 import { Pagination } from "@mui/material";
+import { getTotalPages, viewRegisters } from "../../../utils/paginator";
 
-export const Paginator = ({ totalPages, page, handlePageChange, totalRegisters }) => {
+export const Paginator = ({ registers, page, handlePageChange }) => {
+    const totalRegisters = registers?.count;
+    const totalPages = getTotalPages(registers);
+    const { initialRecords, lastRecords } = viewRegisters(registers?.results, page);
+
     return (
         <div style={{ display: "flex", justifyContent: "space-between" }}>
             <Pagination
@@ -10,7 +15,7 @@ export const Paginator = ({ totalPages, page, handlePageChange, totalRegisters }
                 page={page}
                 onChange={(e) => handlePageChange(e.target.textContent)}
             />
-            <h5>Total de registros: {totalRegisters}</h5>
+            <p> {initialRecords} - {lastRecords} of {totalRegisters}</p>
         </div>
     )
 }

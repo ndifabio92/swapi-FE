@@ -1,4 +1,5 @@
 import { useState, useEffect } from 'react';
+import axios from 'axios';
 
 const useApiCall = (resource, page = "1", name = "") => {
   const [data, setData] = useState([]);
@@ -11,10 +12,11 @@ const useApiCall = (resource, page = "1", name = "") => {
         setLoading(true);
         setError(null);
 
-        const response = await fetch(`${process.env.REACT_APP_BASE_URL_API}${resource}/?search=${name}&page=${page}`);
-        const jsonData = await response.json();
+        const response = await axios.get(`${process.env.REACT_APP_BASE_URL_API}${resource}/`, {
+          params: { search: name, page: page }
+        });
 
-        setData(jsonData);
+        setData(response.data);
         setLoading(false);
 
       } catch (error) {
