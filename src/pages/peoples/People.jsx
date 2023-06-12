@@ -4,7 +4,7 @@ import Loader from "../../components/ui/Loader/Loader";
 import { ListPeople } from "./components/ListPeople";
 import { Paginator } from "../../components/ui/Pagination/Paginator";
 import { swalAlert } from "../../utils/alert";
-import { Form } from "../../components/Form/Form";
+import { FormSearch } from "../../components/Form/FormSearch";
 
 export const People = () => {
     const [page, setPage] = useState("1");
@@ -20,7 +20,7 @@ export const People = () => {
                     <Loader isLoading={loading} />
                     :
                     <>
-                        <Form query={query} setQuery={setQuery} />
+                        <FormSearch query={query} setQuery={setQuery} />
                         <ListPeople data={data} />
                         <Paginator registers={data} handlePageChange={setPage} page={+page} />
                     </>

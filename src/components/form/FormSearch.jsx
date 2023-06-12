@@ -4,7 +4,7 @@ import { formSchema } from '../validations/formSchema'
 import { Button, TextField } from '@mui/material';
 import './styles/index.css';
 
-export const Form = ({ query, setQuery }) => {
+export const FormSearch = ({ query, setQuery }) => {
 
     const formik = useFormik({
         initialValues: {
