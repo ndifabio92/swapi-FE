@@ -1,0 +1,15 @@
+.nav-container {
+  background-color: black !important;
+}
+
+.nav-header {
+  width: 100%;
+  max-width: 1280px;
+  display: flex;
+  justify-content: space-between;
+  margin: auto;
+}
+
+.nav-bar {
+  justify-content: end;
+}
