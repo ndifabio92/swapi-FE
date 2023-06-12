@@ -4,7 +4,7 @@ import Loader from "../../components/ui/Loader/Loader";
 import { ListPeople } from "./components/ListPeople";
 import { Paginator } from "../../components/ui/Pagination/Paginator";
 import { swalAlert } from "../../utils/alert";
-import { FormSearch } from "../../components/Form/FormSearch";
+import { FormSearch } from "../../components/FormSearch/FormSearch";
 
 export const People = () => {
     const [page, setPage] = useState("1");
