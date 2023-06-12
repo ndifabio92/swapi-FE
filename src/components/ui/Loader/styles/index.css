@@ -1,6 +1,30 @@
-.loaderContainer {
+/* .loaderContainer {
   display: flex;
   justify-content: center;
   align-items: center;
   height: 100vh;
+} */
+
+.loaderContainer {
+  top: 50%;
+  left: 50%;
+  position: absolute;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  transform: translate(-50%, -50%);
+  height: 100vh;
+}
+
+.spinner {
+  animation: spin 2s linear infinite;
+}
+
+@keyframes spin {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
 }

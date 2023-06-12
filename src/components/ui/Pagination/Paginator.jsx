@@ -8,7 +8,8 @@ export const Paginator = ({ registers, page, handlePageChange }) => {
     const { initialRecords, lastRecords } = viewRegisters(registers?.results, page);
 
     return (
-        <div style={{ display: "flex", justifyContent: "space-between" }}>
+        // <div style={{ display: "flex", justifyContent: "space-between" }}>
+        <div>
             <Pagination
                 count={+totalPages}
                 color="primary"

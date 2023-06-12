@@ -7,7 +7,8 @@ export const Sort = ({ ascending, setAscending }) => {
     const toggleSortOrder = () => setAscending(!ascending);
 
     return (
-        <div style={{ marginTop: "10px", textAlign: 'end' }}>
+        // <div style={{ marginTop: "10px", textAlign: 'end' }}>
+        <div>
             <Button variant="contained" onClick={toggleSortOrder} endIcon={ascending ? <ArrowDownward /> : <ArrowUpward />}>
                 Sort
             </Button>

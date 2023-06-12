@@ -10,11 +10,22 @@ export const ListMovies = ({ data }) => {
         <div className='container-list'>
             {data.results?.map((film, index) => (
                 <section className='container-list' key={index}>
-                    <Card className="root" style={{ background: "black" }}>
+                    <Card className="root">
                         <img src={getImage("films", film.title)} />
                         <CardContent>
-                            <Typography className="title" color="white">{film.title}</Typography>
-                            <Typography className="description" color="white">
+                            <Typography className="title">{film.title}</Typography>
+                            <Typography className="title">
+                                {film.release_date}
+                            </Typography>
+                            <br />
+                            <Typography className="description">
+                                <span style={{ color: "yellow" }}>Director</span> {film.director}
+                            </Typography>
+                            <Typography className="description">
+                                <span style={{ color: "yellow" }}>Producers</span> {film.producer}
+                            </Typography>
+                            <br />
+                            <Typography className="description">
                                 {film.opening_crawl}
                             </Typography>
                         </CardContent>

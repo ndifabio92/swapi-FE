@@ -4,16 +4,22 @@
   display: flex;
   flex-direction: column;
   align-items: center;
+  background: black !important;
+  padding: 35px 19px 19px 19px;
 }
 
 .title {
-  font-size: 18px;
+  font-size: 25px !important;
   font-weight: bold;
+  color: yellow;
+  text-align: center;
 }
 
 .description {
-  font-size: 14px;
+  font-size: 12px;
   margin-top: 10px;
+  color: white;
+  text-align: center;
 }
 
 .container-list {
@@ -28,10 +34,10 @@ section {
   justify-content: center;
 }
 
-section p:first-of-type {
+/* section p:first-of-type {
   text-align: center;
   color: yellow;
-}
+} */
 
 /* section div {
   width: 0px;
