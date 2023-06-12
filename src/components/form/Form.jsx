@@ -1,8 +1,8 @@
-import React, { useState } from 'react'
+import React from 'react'
 import { useFormik } from 'formik'
 import { formSchema } from '../validations/formSchema'
 import { Button, TextField } from '@mui/material';
-
+import './styles/index.css';
 
 export const Form = ({ query, setQuery }) => {
 
@@ -16,16 +16,19 @@ export const Form = ({ query, setQuery }) => {
         },
     });
     return (
-        <form onSubmit={formik.handleSubmit}>
+        <form onSubmit={formik.handleSubmit} className='form'>
             <TextField
+                className='textfield'
                 variant="outlined"
                 name='name'
                 value={formik.values.name}
                 onChange={formik.handleChange}
                 error={formik.touched.name && Boolean(formik.errors.name)}
                 helperText={formik.touched.name && formik.errors.name}
+                InputProps={{ style: { color: "white" } }}
+
             />
-            <Button variant='contained' type='submit'>Search</Button>
+            <Button variant='contained' type='submit' className='btn-search'>Search</Button>
         </form>
     )
 }

@@ -28,27 +28,8 @@
   justify-content: center;
 }
 
-section {
-  display: flex;
-  width: auto;
-  justify-content: center;
+.card {
+  border-style: solid;
+  border-color: yellow;
+  border-radius: 50px !important;
 }
-
-/* section p:first-of-type {
-  text-align: center;
-  color: yellow;
-} */
-
-/* section div {
-  width: 0px;
-  flex-grow: 1;
-  object-fit: cover;
-  opacity: 0.8;
-  transition: 0.5s ease;
-} */
-/* 
-section div:hover {
-  width: 300px;
-  opacity: 1;
-  filter: contrast(120%);
-} */

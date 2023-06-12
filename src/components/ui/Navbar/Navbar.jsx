@@ -11,7 +11,7 @@ const Navbar = () => {
                     className="navbar-brand"
                     to="/"
                 >
-                    <img src={logo} style={{ width: "125px" }} />
+                    <img src={logo} className='img-logo' />
                 </Link>
 
                 <div className="navbar-collapse nav-bar">
@@ -25,7 +25,7 @@ const Navbar = () => {
                         </NavLink>
 
                         <NavLink
-                            className={({ isActive }) => `nav-item nav-link  ${isActive ? 'active' : ''}`}
+                            className={({ isActive }) => `nav-item nav-link  ${isActive ? 'active ' : ''}`}
                             to="/people"
                         >
                             People

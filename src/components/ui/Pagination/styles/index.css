@@ -1,0 +1,25 @@
+.container-paginator {
+  margin: auto;
+  margin-top: 10px;
+  text-align: end;
+  max-width: 1280px;
+}
+
+.btn-sort {
+  background-color: yellow !important;
+  color: black !important;
+  width: 100px;
+}
+
+.records {
+  color: yellow;
+}
+
+.pagination {
+  display: flex;
+  justify-content: center;
+}
+
+.MuiPaginationItem-root {
+  color: yellow !important;
+}

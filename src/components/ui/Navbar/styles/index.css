@@ -13,3 +13,15 @@
 .nav-bar {
   justify-content: end;
 }
+
+.img-logo {
+  width: 125px;
+}
+
+.nav-link {
+  color: white !important;
+}
+
+.nav-link.active {
+  color: yellow !important;
+}

@@ -1,0 +1,12 @@
+.container-sort {
+  margin: auto;
+  margin-top: 10px;
+  text-align: end;
+  max-width: 1280px;
+}
+
+.btn-sort {
+  background-color: yellow !important;
+  color: black !important;
+  width: 100px;
+}

@@ -9,8 +9,8 @@ export const ListMovies = ({ data }) => {
     return (
         <div className='container-list'>
             {data.results?.map((film, index) => (
-                <section className='container-list' key={index}>
-                    <Card className="root">
+                <section key={index}>
+                    <Card className="root card">
                         <img src={getImage("films", film.title)} />
                         <CardContent>
                             <Typography className="title">{film.title}</Typography>

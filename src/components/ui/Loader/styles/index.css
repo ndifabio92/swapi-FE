@@ -1,9 +1,6 @@
-/* .loaderContainer {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  height: 100vh;
-} */
+.img {
+  width: 75px;
+}
 
 .loaderContainer {
   top: 50%;

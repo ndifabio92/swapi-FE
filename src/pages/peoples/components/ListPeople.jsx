@@ -10,12 +10,12 @@ export const ListPeople = ({ data }) => {
     const sortedResults = sortedList(data, "name", ascending);
 
     return (
-        <div>
+        <>
             <Sort ascending={ascending} setAscending={setAscending} />
-            <div className="container">
+            <div className='container-list'>
                 {sortedResults?.map((people, index) => (
-                    <section className='container-list' key={index}>
-                        <Card className="root" key={index}>
+                    <section key={index}>
+                        <Card className="root card" key={index}>
                             <CardContent style={{ width: "350px" }}>
                                 <Typography className="title">{people.name}</Typography>
                                 <Typography className="description">{people.eye_color}</Typography>
@@ -24,6 +24,6 @@ export const ListPeople = ({ data }) => {
                     </section>
                 ))}
             </div>
-        </div>
+        </>
     );
 };
