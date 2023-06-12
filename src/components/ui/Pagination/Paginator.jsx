@@ -10,7 +10,7 @@ export const Paginator = ({ registers, page, handlePageChange }) => {
     return (
         <div style={{ display: "flex", justifyContent: "space-between" }}>
             <Pagination
-                count={totalPages}
+                count={+totalPages}
                 color="primary"
                 page={page}
                 onChange={(e) => handlePageChange(e.target.textContent)}
