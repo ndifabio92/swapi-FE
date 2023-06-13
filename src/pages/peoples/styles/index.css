@@ -20,6 +20,10 @@
   margin-top: 10px;
   color: white;
   text-align: center;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
 }
 
 .card {
@@ -31,4 +35,8 @@
 .img-people {
   width: 200px;
   height: 300px;
+}
+
+.placeholder-animation {
+  background: white !important;
 }
