@@ -1,34 +1,30 @@
 import React from 'react';
-import { Card, CardContent, CardMedia, Typography } from "@mui/material";
+import {Card, CardContent, Typography} from "@mui/material";
+import {getImage} from '../../../utils/getImage';
 import '../styles/index.css';
-import { getImage } from '../../../utils/getImage';
 
 
-
-export const ListMovies = ({ data }) => {
+export const CardItemMovies = ({item}) => {
     return (
-
-                <section>
-                    <Card className="root card">
-                        <img src={getImage("films", film.title)} />
-                        <CardContent>
-                            <Typography className="title">{film.title}</Typography>
-                            <Typography className="title">
-                                {film.release_date}
-                            </Typography>
-                            <br />
-                            <Typography className="description">
-                                <span style={{ color: "yellow" }}>Director</span> {film.director}
-                            </Typography>
-                            <Typography className="description">
-                                <span style={{ color: "yellow" }}>Producers</span> {film.producer}
-                            </Typography>
-                            <br />
-                            <Typography className="description">
-                                {film.opening_crawl}
-                            </Typography>
-                        </CardContent>
-                    </Card>
-                </section>
+        <Card className="root card">
+            <img className="img-films" src={getImage("films", item.title)} alt={item.title}/>
+            <CardContent>
+                <Typography className="title">{item.title}</Typography>
+                <Typography className="title">
+                    {item.release_date}
+                </Typography>
+                <br/>
+                <Typography className="description">
+                    <span style={{color: "yellow"}}>Director</span> {item.director}
+                </Typography>
+                <Typography className="description">
+                    <span style={{color: "yellow"}}>Producers</span> {item.producer}
+                </Typography>
+                <br/>
+                <Typography className="description">
+                    {item.opening_crawl}
+                </Typography>
+            </CardContent>
+        </Card>
     );
 };

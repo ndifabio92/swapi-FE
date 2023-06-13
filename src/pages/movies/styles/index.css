@@ -22,14 +22,13 @@
   text-align: center;
 }
 
-.container-list {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
-}
-
 .card {
   border-style: solid;
   border-color: yellow;
   border-radius: 50px !important;
+}
+
+.img-films {
+  width: 200px;
+  height: 300px;
 }

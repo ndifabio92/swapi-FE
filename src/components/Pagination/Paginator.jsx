@@ -1,6 +1,6 @@
 import React from "react";
 import { Pagination } from "@mui/material";
-import { getTotalPages, viewRegisters } from "../../../utils/paginator";
+import { getTotalPages, viewRegisters } from "../../utils/paginator";
 import './styles/index.css'
 
 export const Paginator = ({ registers, page, handlePageChange }) => {
