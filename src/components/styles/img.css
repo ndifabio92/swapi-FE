@@ -1,0 +1,6 @@
+.img-people {
+    object-fit: cover;
+    object-position: top;
+    width: 200px;
+    height: 300px;
+}

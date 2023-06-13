@@ -1,17 +1,17 @@
 import React from 'react'
-import { useFormik } from 'formik'
-import { formSchema } from '../validations/formSchema'
-import { Button, TextField } from '@mui/material';
+import {useFormik} from 'formik'
+import {formSchema} from '../validations/formSchema'
+import {Button, TextField} from '@mui/material';
 import './styles/index.css';
 
-export const FormSearch = ({ query, setQuery }) => {
+export const FormSearch = ({query, setQuery}) => {
 
     const formik = useFormik({
         initialValues: {
             name: query,
         },
         validationSchema: formSchema,
-        onSubmit: ({ name }) => {
+        onSubmit: ({name}) => {
             setQuery(name)
         },
     });
@@ -25,8 +25,6 @@ export const FormSearch = ({ query, setQuery }) => {
                 onChange={formik.handleChange}
                 error={formik.touched.name && Boolean(formik.errors.name)}
                 helperText={formik.touched.name && formik.errors.name}
-                InputProps={{ style: { color: "white" } }}
-
             />
             <Button variant='contained' type='submit' className='btn-search'>Search</Button>
         </form>

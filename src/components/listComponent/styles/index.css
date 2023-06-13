@@ -1,5 +1,14 @@
 .container-list {
+    max-width: 1280px;
+    margin: auto;
     display: flex;
     flex-wrap: wrap;
-    justify-content: center;
+    justify-content: space-between;
+}
+
+.container-header {
+    display: flex;
+    max-width: 1280px;
+    margin: 0 auto 3rem auto;
+    justify-content: space-between;
 }

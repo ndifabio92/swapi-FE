@@ -5,7 +5,7 @@ import Navbar from "../components/ui/Navbar/Navbar";
 import { HomePage } from "../pages/home/HomePage";
 import { Films } from "../pages/movies/Films";
 import NotFound from "../pages/not-found/NotFound";
-import { People } from "../pages/peoples/People";
+import { People } from "../pages/people/People";
 
 export const SwapiRoutes = () => {
     return (

@@ -1,20 +1,45 @@
 .form {
-  max-width: 1280px;
-  margin: auto;
-  display: flex;
-  justify-content: flex-end;
-  gap: 30px;
-  height: 40px;
+    display: flex;
+    gap: 30px;
+
 }
 
 .textfield {
-  border: 2px solid yellow !important;
-  border-radius: 25px;
-  top: 10px;
+    border: 2px solid yellow !important;
+    border-radius: 25px;
+    height: 40px !important;
+    width: 300px;
 }
 
 .btn-search {
-  background-color: yellow !important;
-  color: black !important;
-  width: 100px;
+    background-color: yellow !important;
+    color: black !important;
+    width: 100px !important;
+    height: 40px !important;
+}
+
+.Mui-error {
+    color: white !important;
+    z-index: 1;
+}
+
+.MuiOutlinedInput-notchedOutline {
+    border: 2px solid transparent !important;
+    border-radius: 25px !important;
+    height: 40px !important;
+    width: 300px;
+}
+
+/*.css-ihdtdm {*/
+/*  position: relative !important;*/
+/*  top: 200px !important;*/
+/*}*/
+.css-1t8l2tu-MuiInputBase-input-MuiOutlinedInput-input {
+    padding: 0 !important;
+}
+.MuiInputBase-root {
+    color: white !important;
+    height: 40px !important;
+    padding-left: 10px !important;
+
 }
