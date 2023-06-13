@@ -13,6 +13,7 @@ export const Paginator = ({ registers, page, handlePageChange }) => {
             <Pagination
                 className="pagination"
                 shape="rounded"
+
                 count={+totalPages}
                 page={page}
                 onChange={(e) => handlePageChange(e.target.textContent)}

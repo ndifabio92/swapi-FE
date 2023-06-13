@@ -7,9 +7,8 @@ import { getImage } from '../../../utils/getImage';
 
 export const ListMovies = ({ data }) => {
     return (
-        <div className='container-list'>
-            {data.results?.map((film, index) => (
-                <section key={index}>
+
+                <section>
                     <Card className="root card">
                         <img src={getImage("films", film.title)} />
                         <CardContent>
@@ -31,7 +30,5 @@ export const ListMovies = ({ data }) => {
                         </CardContent>
                     </Card>
                 </section>
-            ))}
-        </div>
     );
 };
