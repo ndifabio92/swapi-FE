@@ -1,43 +1,55 @@
 import React from 'react';
-import {Card, CardContent, Typography} from '@mui/material';
-import {getImage} from "../../utils/getImage";
+import { Card, CardContent, Typography } from '@mui/material';
+import { getImage } from "../../utils/getImage";
 
 import '../styles/cards.css';
 import '../styles/img.css';
 
-export const CardItemStarships = ({item}) => {
+export const CardItemStarships = ({ item }) => {
     return (
         <Card className="root card">
             <div className="container-img">
-                <img className="img-people" src={getImage("starships", item.name)} alt={item.name}/>
+                <img className="img-people" src={getImage("starships", item.name)} alt={item.name} />
             </div>
             <CardContent>
                 <Typography className="title">{item.name}</Typography>
-                <br/>
+                <br />
                 <div className="container-info">
                     <Typography className="description">
-                        <span>Rotation Period</span> {item.rotation_period}
+                        <span>Model</span> {item.model}
                     </Typography>
                     <Typography className="description">
-                        <span>Orbital Period</span> {item.orbital_period}
+                        <span>Manufacturer</span> {item.manufacturer}
                     </Typography>
                     <Typography className="description">
-                        <span>Diameter</span> {item.diameter}
+                        <span>Cost in Credits</span> {item.cost_in_credits}
                     </Typography>
                     <Typography className="description">
-                        <span>Climate</span> {item.climate}
+                        <span>Length</span> {item.length}
                     </Typography>
                     <Typography className="description">
-                        <span>Gravity</span> {item.gravity}
+                        <span>Max Atmosphering Speed</span> {item.max_atmosphering_speed}
                     </Typography>
                     <Typography className="description">
-                        <span>Terrain</span> {item.terrain}
+                        <span>Crew</span> {item.crew}
                     </Typography>
                     <Typography className="description">
-                        <span>Water</span> {item.surface_water}
+                        <span>Passengers</span> {item.passengers}
                     </Typography>
                     <Typography className="description">
-                        <span>Population</span> {item.population}
+                        <span>Cargo Capacity</span> {item.cargo_capacity}
+                    </Typography>
+                    <Typography className="description">
+                        <span>Consumables</span> {item.consumables}
+                    </Typography>
+                    <Typography className="description">
+                        <span>Hyperdrive Rating</span> {item.hyperdrive_rating}
+                    </Typography>
+                    <Typography className="description">
+                        <span>MGLT</span> {item.MGLT}
+                    </Typography>
+                    <Typography className="description">
+                        <span>Starship Class</span> {item.starship_class}
                     </Typography>
                 </div>
             </CardContent>

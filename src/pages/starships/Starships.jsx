@@ -1,8 +1,8 @@
 import React from "react";
-import {ListComponent} from "../../components/listComponent/ListComponent";
-import {CardItemStarships} from "../../components/starships/CardItemStarships";
+import { ListComponent } from "../../components/listComponent/ListComponent";
+import { CardItemStarships } from "../../components/starships/CardItemStarships";
 
-export const Starships = () => {
+const Starships = () => {
     return (
         <ListComponent
             resource="starships"
@@ -10,3 +10,4 @@ export const Starships = () => {
         />
     )
 }
+export default Starships;

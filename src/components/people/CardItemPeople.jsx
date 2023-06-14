@@ -1,32 +1,25 @@
 import React from 'react';
-import {Card, CardContent, Skeleton, Typography} from '@mui/material';
-import {getImage} from "../../utils/getImage";
-import useApiGetById from "../../hooks/useApiGetById";
+import { Link } from 'react-router-dom';
+import { Card, CardContent, Typography } from '@mui/material';
+import { getImage } from "../../utils/getImage";
 
 import '../styles/cards.css';
 import '../styles/img.css';
 
-export const CardItemPeople = ({item}) => {
-    const {data: homeworld, loading, error} = useApiGetById(item.homeworld);
+export const CardItemPeople = ({ item }) => {
+    const id = item.url.split("/")[5];
 
     return (
         <Card className="root card">
             <div className="container-img">
-                <img className="img-people" src={getImage("people", item.name)} alt={item.name}/>
+                <img className="img-people" src={getImage("people", item.name)} alt={item.name} />
             </div>
             <CardContent>
                 <Typography className="title">{item.name}</Typography>
                 <Typography className="title">
                     {item.birth_year}
                 </Typography>
-                <br/>
-                <Typography className="description">
-                    <span>HomeWorld</span>
-                    {
-                        loading ? <Skeleton className="placeholder-animation" height={10} width="50%"/>
-                            : homeworld?.name
-                    }
-                </Typography>
+                <br />
                 <Typography className="description">
                     <span>Height</span> {item.height}
                 </Typography>
@@ -46,6 +39,9 @@ export const CardItemPeople = ({item}) => {
                     <span>Gender</span> {item.gender}
                 </Typography>
             </CardContent>
+            <Link to={`/people/${id}`} state={{ item }} >
+                More...
+            </Link>
         </Card>
     )
 }
