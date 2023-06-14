@@ -1,7 +1,7 @@
 import React from "react";
 import { Pagination } from "@mui/material";
 import { getTotalPages, viewRegisters } from "../../utils/paginator";
-import './styles/index.css'
+import './styles/paginator.css'
 
 export const Paginator = ({ registers, page, handlePageChange }) => {
     const totalRegisters = registers?.count;

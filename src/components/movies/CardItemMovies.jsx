@@ -8,7 +8,9 @@ import '../styles/img.css';
 export const CardItemMovies = ({item}) => {
     return (
         <Card className="root card">
-            <img className="img-films" src={getImage("films", item.title)} alt={item.title}/>
+            <div className="container-img">
+                <img className="img-people" src={getImage("films", item.title)} alt={item.name}/>
+            </div>
             <CardContent>
                 <Typography className="title">{item.title}</Typography>
                 <Typography className="title">
@@ -16,10 +18,10 @@ export const CardItemMovies = ({item}) => {
                 </Typography>
                 <br/>
                 <Typography className="description">
-                    <span style={{color: "yellow"}}>Director</span> {item.director}
+                    <span>Director</span> {item.director}
                 </Typography>
                 <Typography className="description">
-                    <span style={{color: "yellow"}}>Producers</span> {item.producer}
+                    <span>Producers</span> {item.producer}
                 </Typography>
                 <br/>
                 <Typography className="description">

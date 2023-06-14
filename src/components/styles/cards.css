@@ -35,3 +35,25 @@
 .placeholder-animation {
     background: white !important;
 }
+
+p > span {
+    color: yellow;
+}
+
+.container-img {
+    display: flex;
+    justify-content: center;
+}
+
+@media (max-width: 767px) {
+    .card {
+        width: calc(calc(100% / 2) - 1rem) !important;
+    }
+}
+
+@media (max-width: 600px) {
+    .card {
+        width: 100% !important;
+    }
+}
+

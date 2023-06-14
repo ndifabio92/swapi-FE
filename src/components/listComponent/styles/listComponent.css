@@ -12,3 +12,16 @@
     margin: 0 auto 3rem auto;
     justify-content: space-between;
 }
+
+@media (max-width: 767px) {
+    .container-header {
+        gap: 1rem;
+    }
+}
+
+@media (max-width: 600px) {
+    .container-header {
+        gap: 1rem;
+    }
+}
+

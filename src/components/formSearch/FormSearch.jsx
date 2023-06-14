@@ -2,7 +2,7 @@ import React from 'react'
 import {useFormik} from 'formik'
 import {formSchema} from '../validations/formSchema'
 import {Button, TextField} from '@mui/material';
-import './styles/index.css';
+import './styles/form.css';
 
 export const FormSearch = ({query, setQuery}) => {
 

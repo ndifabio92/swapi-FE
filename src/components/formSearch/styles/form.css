@@ -1,20 +1,19 @@
 .form {
     display: flex;
     gap: 30px;
-
 }
 
 .textfield {
     border: 2px solid yellow !important;
     border-radius: 25px;
     height: 40px !important;
-    width: 300px;
+    width: 350px;
 }
 
 .btn-search {
     background-color: yellow !important;
     color: black !important;
-    width: 100px !important;
+    width: auto !important;
     height: 40px !important;
 }
 
@@ -30,16 +29,30 @@
     width: 300px;
 }
 
-/*.css-ihdtdm {*/
-/*  position: relative !important;*/
-/*  top: 200px !important;*/
-/*}*/
 .css-1t8l2tu-MuiInputBase-input-MuiOutlinedInput-input {
     padding: 0 !important;
 }
+
 .MuiInputBase-root {
     color: white !important;
     height: 40px !important;
     padding-left: 10px !important;
 
+}
+
+@media (max-width: 767px) {
+    .textfield {
+        width: auto;
+    }
+    .btn-search {
+        width: 50%;
+    }
+}
+@media (max-width: 600px) {
+    .textfield {
+        width: auto;
+    }
+    .btn-search {
+        width: 50%;
+    }
 }

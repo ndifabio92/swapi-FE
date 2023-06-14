@@ -1,5 +1,5 @@
 import { Link, NavLink } from 'react-router-dom';
-import logo from '../../../assets/images/Starwars-logo.png'
+import logo from '../../../assets/images/logo/Starwars-logo.png'
 import './styles/index.css';
 
 const Navbar = () => {
@@ -11,7 +11,7 @@ const Navbar = () => {
                     className="navbar-brand"
                     to="/"
                 >
-                    <img src={logo} className='img-logo' />
+                    <img src={logo} className='img-logo'  alt="logo"/>
                 </Link>
 
                 <div className="navbar-collapse nav-bar">
@@ -19,37 +19,37 @@ const Navbar = () => {
 
                         <NavLink
                             className={({ isActive }) => `nav-item nav-link  ${isActive ? 'active' : ''}`}
-                            to="/films"
+                            to="/"
                         >
-                            Films
+                            FILMS
                         </NavLink>
 
                         <NavLink
                             className={({ isActive }) => `nav-item nav-link  ${isActive ? 'active ' : ''}`}
                             to="/people"
                         >
-                            People
+                            PEOPLE
                         </NavLink>
 
                         <NavLink
                             className={({ isActive }) => `nav-item nav-link  ${isActive ? 'active' : ''}`}
                             to="/planets"
                         >
-                            Planets
+                            PLANETS
                         </NavLink>
 
                         <NavLink
                             className={({ isActive }) => `nav-item nav-link  ${isActive ? 'active' : ''}`}
                             to="/starships"
                         >
-                            Starships
+                            STARSHIPS
                         </NavLink>
 
                         <NavLink
                             className={({ isActive }) => `nav-item nav-link  ${isActive ? 'active' : ''}`}
                             to="/vehicles"
                         >
-                            Vehicles
+                            VEHICLES
                         </NavLink>
                     </div>
                 </div>

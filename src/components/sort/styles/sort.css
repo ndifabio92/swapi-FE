@@ -1,0 +1,29 @@
+.container-sort {
+
+}
+
+.btn-sort {
+  background-color: yellow !important;
+  color: black !important;
+  width: auto !important;
+  height: 40px !important;
+}
+
+@media (max-width: 767px) {
+  .container-header {
+    gap: 1rem;
+  }
+  .btn-sort {
+    width: auto;
+  }
+}
+
+@media (max-width: 600px) {
+  .container-sort {
+    display: flex;
+    justify-content: flex-end;
+  }
+  .btn-sort {
+    width: auto;
+  }
+}

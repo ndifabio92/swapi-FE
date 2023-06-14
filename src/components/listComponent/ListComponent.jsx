@@ -1,11 +1,11 @@
-import React, {useEffect, useState} from 'react';
-import {Paginator} from "../Pagination/Paginator";
+import React, {useState} from 'react';
+import {Paginator} from "../pagination/Paginator";
 import {FormSearch} from "../formSearch/FormSearch";
-import {Sort} from "../Sort/Sort";
+import {Sort} from "../sort/Sort";
 import useApiCall from "../../hooks/useApiCall";
 import {swalAlert} from "../../utils/alert";
 import Loader from "../ui/Loader/Loader";
-import './styles/index.css';
+import './styles/listComponent.css';
 
 export const ListComponent = ({CardComponent, resource}) => {
 
@@ -25,14 +25,18 @@ export const ListComponent = ({CardComponent, resource}) => {
                     <>
                         <div className="container-header">
                             <FormSearch query={query} setQuery={setQuery}/>
-                            <Sort data={sortedList ? sortedList : data?.results} setSortedList={setSortedList}/>
+                            {
+                                data.count !== 0 && <Sort data={sortedList ? sortedList : data?.results} setSortedList={setSortedList}/>
+                            }
                         </div>
                         <div className='container-list'>
                             {register.map((item, index) => (
                                 <CardComponent item={item} key={index}/>
                             ))}
                         </div>
-                        <Paginator registers={data} handlePageChange={setPage} page={+page}/>
+                        {
+                            data.count !== 0 && <Paginator registers={data} handlePageChange={setPage} page={+page}/>
+                        }
                     </>
             }
         </>

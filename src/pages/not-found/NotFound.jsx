@@ -7,7 +7,7 @@ const NotFoundPage = () => {
             <h1 className='not-found-h1'>404</h1>
             <h2 className='not-found-h2'>Page Not Found</h2>
             <p className='not-found-p'>Oops! The page you are looking for does not exist.</p>
-            <a href="/" className="not-found-a">Go back to homepage</a>
+            <a href="/" className="not-found-a">Go back to HomePage</a>
         </div>
     );
 };
