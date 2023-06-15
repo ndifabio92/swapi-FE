@@ -1,0 +1,15 @@
+.container-people-detail {
+  max-width: 1280px;
+  margin: auto;
+  margin-top: 1rem;
+  margin-bottom: 2rem;
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+}
+
+.container-people-homeworld {
+  display: flex;
+  justify-content: space-around;
+  margin-bottom: 2rem;
+}

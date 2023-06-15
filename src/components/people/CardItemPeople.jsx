@@ -1,6 +1,6 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-import { Card, CardContent, Typography } from '@mui/material';
+import { Button, Card, CardContent, Typography } from '@mui/material';
 import { getImage } from "../../utils/getImage";
 
 import '../styles/cards.css';
@@ -16,10 +16,10 @@ export const CardItemPeople = ({ item }) => {
             </div>
             <CardContent>
                 <Typography className="title">{item.name}</Typography>
-                <Typography className="title">
-                    {item.birth_year}
-                </Typography>
                 <br />
+                <Typography className="description">
+                    <span>birth_year</span> {item.birth_year}
+                </Typography>
                 <Typography className="description">
                     <span>Height</span> {item.height}
                 </Typography>
@@ -39,9 +39,11 @@ export const CardItemPeople = ({ item }) => {
                     <span>Gender</span> {item.gender}
                 </Typography>
             </CardContent>
-            <Link to={`/people/${id}`} state={{ item }} >
-                More...
-            </Link>
+            <Button style={{ background: "yellow" }}>
+                <Link style={{ color: "black", textDecoration: "none" }} to={`/people/${id}`} state={{ item }}>
+                    Read More...
+                </Link>
+            </Button>
         </Card>
     )
 }

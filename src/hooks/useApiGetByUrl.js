@@ -1,6 +1,6 @@
 import { useState, useEffect } from 'react';
 
-const useApiGetById = (url) => {
+const useApiGetByUrl = (url) => {
     const [data, setData] = useState([]);
     const [loading, setLoading] = useState(true);
     const [error, setError] = useState(null);
@@ -29,4 +29,4 @@ const useApiGetById = (url) => {
     return { data, loading, error };
 };
 
-export default useApiGetById;
+export default useApiGetByUrl;

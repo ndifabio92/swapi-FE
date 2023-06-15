@@ -1,0 +1,33 @@
+.MuiPaper-root {
+  background-color: black;
+}
+
+.MuiAccordionSummary-expandIconWrapper {
+  color: white;
+}
+
+.Mui-expanded {
+  color: yellow;
+}
+
+.acordion-details {
+  display: flex;
+  gap: 2rem;
+  justify-content: center;
+}
+.container-img-description {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.container-description {
+  display: flex;
+  flex-direction: column;
+  justify-content: center !important;
+}
+.container-opening {
+  display: flex;
+  justify-content: center;
+  max-width: 70%;
+}

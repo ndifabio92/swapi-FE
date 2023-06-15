@@ -1,0 +1,36 @@
+.MuiPaper-root {
+  background-color: black;
+}
+
+.MuiAccordionSummary-expandIconWrapper {
+  color: white;
+}
+
+.Mui-expanded {
+  color: yellow;
+}
+
+.container-vehicle-img {
+  display: flex;
+  justify-content: center;
+}
+
+.img-vehicle {
+  object-fit: cover;
+  object-position: top;
+  width: auto;
+  height: 300px;
+}
+
+.acordion-vehicle-details {
+  display: flex;
+  gap: 2rem;
+  justify-content: center;
+}
+
+.container-vehicle-description {
+  display: flex;
+  width: auto;
+  flex-direction: column;
+  justify-content: center !important;
+}
