@@ -55,6 +55,7 @@ const PeopleDetail = () => {
                         </div>
                         <div>
                             {
+                                data.starships.length !== 0 &&
                                 <>
                                     <h2 style={{ color: "white" }}>Starships</h2>
                                     <Suspense>
@@ -69,6 +70,7 @@ const PeopleDetail = () => {
                         </div>
                         <div>
                             {
+                                data.vehicles.length !== 0 &&
                                 <>
                                     <h2 style={{ color: "white" }}>Vehicles</h2>
                                     <Suspense>
