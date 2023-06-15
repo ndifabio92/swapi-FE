@@ -1,6 +1,6 @@
 import React from 'react';
 import logo from '../../../assets/images/logo/Starwars-logo.png'
-import './styles/index.css';
+import './styles/loader.css';
 
 const Loader = ({ isLoading }) => isLoading && (
     <div className="loaderContainer">

@@ -1,17 +1,17 @@
 import React, { Suspense, lazy } from "react";
 import { Breadcrumbs, Link, Typography } from "@mui/material";
 import { useParams } from 'react-router-dom';
+import Loader from "../../components/ui/Loader/Loader";
+import useApiGetPeopleById from "../../hooks/useApiGetPeopleById";
+import './styles/charactersDetail.css'
 
 const ItemCharacter = lazy(() => import('../../components/characters/ItemCharacter'));
 const ItemMovie = lazy(() => import('../../components/movies/ItemMovie'));
 const ItemPlanet = lazy(() => import('../../components/planets/ItemPlanet'));
 const ItemStarship = lazy(() => import('../../components/starships/ItemStarship'));
 const ItemVehicle = lazy(() => import('../../components/vehicles/ItemVehicle'));
+const TableStarships = lazy(() => import('../../components/starships/TableStarships'));
 
-import './styles/charactersDetail.css'
-import useApiGetPeopleById from "../../hooks/useApiGetPeopleById";
-import Loader from "../../components/ui/Loader/Loader";
-import EnhancedTable from "../../components/table/Table";
 
 const CharacterDetail = () => {
     const { id } = useParams();
@@ -25,7 +25,7 @@ const CharacterDetail = () => {
                         <div>
                             <Breadcrumbs separator=">" aria-label="breadcrumb" style={{ color: "white" }}>
                                 <Link href="/Characters" style={{ color: "white" }} underline="none">
-                                    PEOPLE
+                                    CHARACTERS
                                 </Link>
                                 <Typography color="text.primary">
                                     <span>{data.name.toUpperCase()}</span>
@@ -50,7 +50,6 @@ const CharacterDetail = () => {
                                             ))
                                         }
                                     </Suspense>
-                                    <EnhancedTable/>
                                 </>
                             }
                         </div>
@@ -64,7 +63,11 @@ const CharacterDetail = () => {
                                             data.starships.map(item => (
                                                 <ItemStarship url={item} key={item.split("/")[5]} />
                                             ))
+
                                         }
+                                    </Suspense>
+                                    <Suspense>
+                                        <TableStarships urls={data.starships}/>
                                     </Suspense>
                                 </>
                             }

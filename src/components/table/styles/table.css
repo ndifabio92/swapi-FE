@@ -5,8 +5,6 @@
 .MuiSvgIcon-root,
 .MuiTablePagination-root,
 .Mui-active,
-.MuiTableCell-root,
-.MuiTableBody-root > tr > th,
 .MuiButtonBase-root:hover,
 .MuiTablePagination-select,
 .Mui-selected {
@@ -14,6 +12,8 @@
 }
 
 .MuiTableHead-root > tr > th,
+.MuiTableCell-root,
+.MuiTableBody-root > tr > th,
 .MuiList-root {
     color: white !important
 }

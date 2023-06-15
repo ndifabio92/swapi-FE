@@ -3,7 +3,7 @@
 }
 
 .btn-sort {
-  background-color: yellow !important;
+  border-color: yellow !important;
   color: black !important;
   width: auto !important;
   height: 40px !important;

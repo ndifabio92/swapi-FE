@@ -15,8 +15,8 @@ export const Sort = ({data, setSortedList}) => {
 
     return (
         <div className='container-sort'>
-            <Button className='btn-sort' variant="contained" onClick={toggleSortOrder}
-                    endIcon={ascending ? <ArrowDownward/> : <ArrowUpward/>}>
+            <Button className='btn-sort' variant="outlined" onClick={toggleSortOrder}
+                    endIcon={ascending ? <ArrowDownward style={{color: "black"}}/> : <ArrowUpward/>}>
                 <SortByAlphaIcon/>
             </Button>
         </div>

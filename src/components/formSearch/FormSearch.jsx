@@ -26,7 +26,7 @@ export const FormSearch = ({query, setQuery}) => {
                 error={formik.touched.name && Boolean(formik.errors.name)}
                 helperText={formik.touched.name && formik.errors.name}
             />
-            <Button variant='contained' type='submit' className='btn-search'>Search</Button>
+            <Button variant='outlined' type='submit' className='btn-search'>Search</Button>
         </form>
     )
 }

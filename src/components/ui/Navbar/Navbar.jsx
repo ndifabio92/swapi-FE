@@ -1,6 +1,6 @@
 import { Link, NavLink } from 'react-router-dom';
 import logo from '../../../assets/images/logo/Starwars-logo.png'
-import './styles/index.css';
+import './styles/navbar.css';
 
 const Navbar = () => {
 

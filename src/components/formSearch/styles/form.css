@@ -11,8 +11,9 @@
 }
 
 .btn-search {
-    background-color: yellow !important;
-    color: black !important;
+    /*background-color: yellow !important;*/
+    border-color: yellow !important;
+    color: yellow !important;
     width: auto !important;
     height: 40px !important;
 }

@@ -1,11 +1,22 @@
 .container-character {
-  display: flex;
-  margin-top: 2rem;
-  gap: 2rem;
-  justify-content: flex-start;
+    display: flex;
+    margin-top: 2rem;
+    gap: 2rem;
+    justify-content: flex-start;
 }
+
 .container-character-description {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.btn-character {
+  border-color: yellow !important;
+  color: yellow !important;
+}
+
+.link-character {
+    color: yellow !important;
+    text-decoration: none;
 }

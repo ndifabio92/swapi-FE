@@ -5,6 +5,7 @@ import { getImage } from "../../utils/getImage";
 
 import '../styles/cards.css';
 import '../styles/img.css';
+import './styles/itemCharacter.css';
 
 export const CardItemCharacter = ({ item }) => {
     const id = item.url.split("/")[5];
@@ -39,8 +40,8 @@ export const CardItemCharacter = ({ item }) => {
                     <span>Gender</span> {item.gender}
                 </Typography>
             </CardContent>
-            <Button style={{ background: "yellow" }}>
-                <Link style={{ color: "black", textDecoration: "none" }} to={`/character/${id}`} state={{ item }}>
+            <Button className="btn-character" variant="outlined">
+                <Link className="link-character" to={`/character/${id}`} state={{ item }}>
                     Read More...
                 </Link>
             </Button>
