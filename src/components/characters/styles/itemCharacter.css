@@ -20,3 +20,13 @@
     color: yellow !important;
     text-decoration: none;
 }
+
+@media (max-width: 767px) {
+    .container-character {
+        flex-direction: column;
+        align-items: center;
+    }
+}
+
+@media (max-width: 600px) {
+}
