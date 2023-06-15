@@ -6,17 +6,19 @@ import useApiCall from "../../hooks/useApiCall";
 import {swalAlert} from "../../utils/alert";
 import Loader from "../ui/Loader/Loader";
 import './styles/listComponent.css';
+import {sortedList} from "../../utils/sorted";
 
 export const ListComponent = ({CardComponent, resource}) => {
 
     const [page, setPage] = useState("1");
     const [query, setQuery] = useState("");
     const {data, loading, error} = useApiCall(resource, page, query);
-    const [sortedList, setSortedList] = useState(data?.results);
+    const dataSorted = sortedList(data?.results,(resource==="films" ? "title" : "name"), false);
+    const [sortedData, setSortedData] = useState(dataSorted);
 
     if (error) swalAlert('error', 'Error', 'The API call attempt failed.');
 
-    const register = sortedList ? sortedList : data?.results;
+    const register = sortedData ? sortedData : dataSorted;
     return (
         <>
             {
@@ -26,7 +28,7 @@ export const ListComponent = ({CardComponent, resource}) => {
                         <div className="container-header">
                             <FormSearch query={query} setQuery={setQuery}/>
                             {
-                                data.count !== 0 && <Sort data={sortedList ? sortedList : data?.results} setSortedList={setSortedList}/>
+                                data.count !== 0 && <Sort data={sortedData ? sortedData : dataSorted} setSortedData={setSortedData}/>
                             }
                         </div>
                         <div className='container-list'>
