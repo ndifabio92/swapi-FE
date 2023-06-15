@@ -1,14 +1,14 @@
 import React from "react";
 import { ListComponent } from "../../components/listComponent/ListComponent";
-import { CardItemPeople } from "../../components/people/CardItemPeople";
+import { CardItemCharacter } from "../../components/characters/CardItemCharacter";
 
-const People = () => {
+const Characters = () => {
     return (
         <ListComponent
             resource="people"
-            CardComponent={CardItemPeople}
+            CardComponent={CardItemCharacter}
         />
     )
 }
 
-export default People;
+export default Characters;

@@ -26,9 +26,9 @@ const Navbar = () => {
 
                         <NavLink
                             className={({ isActive }) => `nav-item nav-link  ${isActive ? 'active ' : ''}`}
-                            to="/people"
+                            to="/characters"
                         >
-                            PEOPLE
+                            CHARACTERS
                         </NavLink>
 
                         <NavLink

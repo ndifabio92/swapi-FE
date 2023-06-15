@@ -1,24 +1,19 @@
-import React from 'react';
-import { Link } from 'react-router-dom';
-import { Button, Card, CardContent, Typography } from '@mui/material';
-import { getImage } from "../../utils/getImage";
+import { Typography } from '@mui/material'
+import React from 'react'
+import { getImage } from '../../utils/getImage'
 
-import '../styles/cards.css';
-import '../styles/img.css';
+import './styles/itemCharacter.css';
 
-export const CardItemPeople = ({ item }) => {
-    const id = item.url.split("/")[5];
-
+const ItemCharacter = ({ item }) => {
     return (
-        <Card className="root card">
+
+        <div className='container-character'>
             <div className="container-img">
-                <img className="img-people" src={getImage("people", item.name)} alt={item.name} />
+                <img className="img-card" src={getImage("characters", item.name)} alt={item.name} />
             </div>
-            <CardContent>
-                <Typography className="title">{item.name}</Typography>
-                <br />
+            <div className='container-character-description'>
                 <Typography className="description">
-                    <span>birth_year</span> {item.birth_year}
+                    <span>Birth Year</span>{item.birth_year}
                 </Typography>
                 <Typography className="description">
                     <span>Height</span> {item.height}
@@ -38,12 +33,8 @@ export const CardItemPeople = ({ item }) => {
                 <Typography className="description">
                     <span>Gender</span> {item.gender}
                 </Typography>
-            </CardContent>
-            <Button style={{ background: "yellow" }}>
-                <Link style={{ color: "black", textDecoration: "none" }} to={`/people/${id}`} state={{ item }}>
-                    Read More...
-                </Link>
-            </Button>
-        </Card>
+            </div>
+        </div>
     )
 }
+export default ItemCharacter;

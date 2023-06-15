@@ -22,7 +22,7 @@ const ItemMovie = ({ url }) => {
                     </AccordionSummary>
                     <AccordionDetails className='acordion-details'>
                         <div className='container-img-description'>
-                            <img className="img-people" src={getImage("films", data.title)} alt={data.name} />
+                            <img className="img-card" src={getImage("films", data.title)} alt={data.name} />
                             <>
                                 <Typography className="description">
                                     <span>Release Date</span> {data.release_date}

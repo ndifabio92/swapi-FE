@@ -14,7 +14,7 @@ const ItemPlanet = ({ url }) => {
                 loading ||
                 <div className='container-planet'>
                     <div className="container-img">
-                        <img className="img-people" src={getImage("planets", data.name)} alt={data.name} />
+                        <img className="img-card" src={getImage("planets", data.name)} alt={data.name} />
                     </div>
                     <div className='container-planet-description'>
                         <Typography className="title">{data.name}</Typography>

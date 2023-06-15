@@ -2,29 +2,29 @@ import React, { Suspense, lazy } from "react";
 import { Breadcrumbs, Link, Typography } from "@mui/material";
 import { useParams } from 'react-router-dom';
 
-const ItemPeople = lazy(() => import('../../components/people/ItemPeople'));
+const ItemCharacter = lazy(() => import('../../components/characters/ItemCharacter'));
 const ItemMovie = lazy(() => import('../../components/movies/ItemMovie'));
 const ItemPlanet = lazy(() => import('../../components/planets/ItemPlanet'));
 const ItemStarship = lazy(() => import('../../components/starships/ItemStarship'));
 const ItemVehicle = lazy(() => import('../../components/vehicles/ItemVehicle'));
 
-import './styles/peopleDetail.css'
+import './styles/charactersDetail.css'
 import useApiGetPeopleById from "../../hooks/useApiGetPeopleById";
 import Loader from "../../components/ui/Loader/Loader";
+import EnhancedTable from "../../components/table/Table";
 
-const PeopleDetail = () => {
+const CharacterDetail = () => {
     const { id } = useParams();
     const { data, loading, error } = useApiGetPeopleById(id);
-    console.log(data)
     return (
         <>
             {
                 loading ? <Loader isLoading={loading} />
                     :
-                    <div className="container-people-detail">
+                    <div className="container-characters-detail">
                         <div>
                             <Breadcrumbs separator=">" aria-label="breadcrumb" style={{ color: "white" }}>
-                                <Link href="/people" style={{ color: "white" }} underline="none">
+                                <Link href="/Characters" style={{ color: "white" }} underline="none">
                                     PEOPLE
                                 </Link>
                                 <Typography color="text.primary">
@@ -32,9 +32,9 @@ const PeopleDetail = () => {
                                 </Typography>
                             </Breadcrumbs>
                         </div>
-                        <div className="container-people-homeworld">
+                        <div className="container-characters-homeworld">
                             <Suspense>
-                                <ItemPeople item={data} />
+                                <ItemCharacter item={data} />
                                 <ItemPlanet url={data.homeworld} />
                             </Suspense>
                         </div>
@@ -50,6 +50,7 @@ const PeopleDetail = () => {
                                             ))
                                         }
                                     </Suspense>
+                                    <EnhancedTable/>
                                 </>
                             }
                         </div>
@@ -89,4 +90,4 @@ const PeopleDetail = () => {
     )
 }
 
-export default PeopleDetail;
+export default CharacterDetail;

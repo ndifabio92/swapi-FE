@@ -1,10 +1,10 @@
-.container-people {
+.container-character {
   display: flex;
   margin-top: 2rem;
   gap: 2rem;
   justify-content: flex-start;
 }
-.container-people-description {
+.container-character-description {
   display: flex;
   flex-direction: column;
   justify-content: center;

@@ -9,7 +9,7 @@ export const CardItemMovies = ({item}) => {
     return (
         <Card className="root card">
             <div className="container-img">
-                <img className="img-people" src={getImage("films", item.title)} alt={item.name}/>
+                <img className="img-card" src={getImage("films", item.title)} alt={item.name}/>
             </div>
             <CardContent>
                 <Typography className="title">{item.title}</Typography>
