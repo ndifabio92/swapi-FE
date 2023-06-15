@@ -10,9 +10,9 @@ import TableRow from "@mui/material/TableRow";
 import TableSortLabel from "@mui/material/TableSortLabel";
 import Paper from "@mui/material/Paper";
 import {visuallyHidden} from "@mui/utils";
-import {headCells} from "./headCells/headCellsStarships";
 
-import './styles/table.css'
+
+import './styles/table.css';
 
 function descendingComparator(a, b, orderBy) {
     if (b[orderBy] < a[orderBy]) {
@@ -43,7 +43,7 @@ function stableSort(array, comparator) {
 }
 
 function EnhancedTableHead(props) {
-    const {order, orderBy, onRequestSort} = props;
+    const {order, orderBy, onRequestSort,headCells} = props;
     const createSortHandler = (property) => (event) => {
         onRequestSort(event, property);
     };
@@ -77,7 +77,7 @@ function EnhancedTableHead(props) {
     );
 }
 
-const TableComponent = ({rows}) => {
+const TableComponent = ({rows, headCells}) => {
     const [order, setOrder] = useState("asc");
     const [orderBy, setOrderBy] = useState("name");
     const [page, setPage] = useState(0);
@@ -118,6 +118,7 @@ const TableComponent = ({rows}) => {
                             orderBy={orderBy}
                             onRequestSort={handleRequestSort}
                             rowCount={rows.length}
+                            headCells={headCells}
                         />
                         <TableBody>
                             {visibleRows.map((row, index) => {

@@ -1,9 +1,9 @@
 import React from 'react';
 import TableComponent from "../table/TableComponent";
 import useApiGetAllUrls from "../../hooks/useApiGetAllUrls";
-import {headCells} from "../table/headCells/headCellsStarships";
+import {headCells} from "../table/headCells/headCellsVehicles";
 
-const TableStarships = ({urls}) => {
+const TableVehicles = ({urls}) => {
     const {data, loading, error} = useApiGetAllUrls(urls);
     const array = Object.values(data).map((item) => {
         const {edited, films, pilots, url, created, ...rest} = item;
@@ -19,4 +19,4 @@ const TableStarships = ({urls}) => {
     )
 }
 
-export default TableStarships;
+export default TableVehicles;

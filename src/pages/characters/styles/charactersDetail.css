@@ -1,27 +1,35 @@
 .MuiPaper-root {
-  background-color: black !important;
+    background-color: black !important;
 }
 
 .MuiAccordionSummary-expandIconWrapper {
-  color: white !important;
+    color: white !important;
 }
 
 .Mui-expanded {
-  color: yellow !important;
+    color: yellow !important;
 }
 
 .container-characters-detail {
-  max-width: 1280px;
-  margin: auto;
-  margin-top: 1rem;
-  margin-bottom: 2rem;
-  display: flex;
-  flex-direction: column;
-  text-align: center;
+    max-width: 1280px;
+    margin: auto;
+    margin-top: 1rem;
+    margin-bottom: 2rem;
+    display: flex;
+    flex-direction: column;
+    text-align: center;
 }
 
 .container-characters-homeworld {
-  display: flex;
-  justify-content: space-around;
-  margin-bottom: 2rem;
+    display: flex;
+    justify-content: space-around;
+}
+
+.container-character-accordion,
+.container-character-accordionSumary {
+    border: 2px solid white !important;
+}
+
+.container-div {
+    margin-top: 3rem;
 }
