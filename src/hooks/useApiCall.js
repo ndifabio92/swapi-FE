@@ -18,7 +18,7 @@ const useApiCall = (resource, page = "1", name = "") => {
         setLoading(false);
 
       } catch (error) {
-        console.log(error);
+        console.error(error);
         setError(error);
         setLoading(false);
       }

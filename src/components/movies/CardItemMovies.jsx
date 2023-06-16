@@ -1,11 +1,13 @@
 import React from 'react';
-import {Card, CardContent, Typography} from "@mui/material";
+import {Button, Card, CardContent, Typography} from "@mui/material";
 import {getImage} from '../../utils/getImage';
+import {Link} from "react-router-dom";
 import '../styles/cards.css';
 import '../styles/img.css';
 
 
 export const CardItemMovies = ({item}) => {
+    const id = item.url.split("/")[5];
     return (
         <Card className="root card">
             <div className="container-img">
@@ -28,6 +30,11 @@ export const CardItemMovies = ({item}) => {
                     {item.opening_crawl}
                 </Typography>
             </CardContent>
+            <Button className="btn-character" variant="outlined">
+                <Link className="link-character" to={`/film/${id}`}>
+                    Read More...
+                </Link>
+            </Button>
         </Card>
     );
 };

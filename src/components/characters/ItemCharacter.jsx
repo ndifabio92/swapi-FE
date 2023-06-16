@@ -6,7 +6,6 @@ import './styles/itemCharacter.css';
 
 const ItemCharacter = ({ item }) => {
     return (
-
         <div className='container-character'>
             <div className="container-img">
                 <img className="img-card" src={getImage("characters", item.name)} alt={item.name} />

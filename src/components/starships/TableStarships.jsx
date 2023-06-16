@@ -2,6 +2,7 @@ import React from 'react';
 import TableComponent from "../table/TableComponent";
 import useApiGetAllUrls from "../../hooks/useApiGetAllUrls";
 import {headCells} from "../table/headCells/headCellsStarships";
+import Loader from "../ui/Loader/Loader";
 
 const TableStarships = ({urls}) => {
     const {data, loading, error} = useApiGetAllUrls(urls);
@@ -12,7 +13,7 @@ const TableStarships = ({urls}) => {
     return (
         <>
             {
-                loading ||
+                loading ? <Loader isLoading={loading}/> :
                 <TableComponent rows={array} headCells={headCells}/>
             }
         </>

@@ -4,6 +4,7 @@ import { Typography } from '@mui/material';
 import { getImage } from '../../utils/getImage';
 
 import './styles/itemPlanet.css'
+import Loader from "../ui/Loader/Loader";
 
 const ItemPlanet = ({ url }) => {
     const { data, loading, error } = useApiGetByUrl(url);
@@ -11,7 +12,6 @@ const ItemPlanet = ({ url }) => {
     return (
         <>
             {
-                loading ||
                 <div className='container-planet'>
                     <div className="container-img">
                         <img className="img-card" src={getImage("planets", data.name)} alt={data.name} />

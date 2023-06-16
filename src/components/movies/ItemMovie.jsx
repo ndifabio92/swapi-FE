@@ -5,13 +5,14 @@ import ExpandMoreIcon from '@mui/icons-material/ExpandMore';
 import { getImage } from '../../utils/getImage';
 
 import './styles/itemMovie.css';
+import Loader from "../ui/Loader/Loader";
 
 const ItemMovie = ({ url }) => {
     const { data, loading, error } = useApiGetByUrl(url);
     return (
         <>
             {
-                loading ||
+                loading ? <Loader isLoading={loading}/> :
                 <Accordion className="acordion">
                     <AccordionSummary
                         expandIcon={<ExpandMoreIcon />}

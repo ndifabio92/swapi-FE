@@ -18,7 +18,7 @@ const useApiGetByUrl = (urls) => {
                 setData(jsonData);
                 setLoading(false);
             } catch (error) {
-                console.log(error);
+                console.error(error);
                 setError(error);
                 setLoading(false);
             }

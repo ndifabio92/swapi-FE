@@ -41,7 +41,7 @@ export const CardItemCharacter = ({ item }) => {
                 </Typography>
             </CardContent>
             <Button className="btn-character" variant="outlined">
-                <Link className="link-character" to={`/character/${id}`} state={{ item }}>
+                <Link className="link-character" to={`/character/${id}`}>
                     Read More...
                 </Link>
             </Button>

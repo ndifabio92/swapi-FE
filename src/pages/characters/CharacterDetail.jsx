@@ -2,7 +2,7 @@ import React, {lazy, Suspense} from "react";
 import {Accordion, AccordionDetails, AccordionSummary, Breadcrumbs, Link, Typography} from "@mui/material";
 import {useParams} from 'react-router-dom';
 import Loader from "../../components/ui/Loader/Loader";
-import useApiGetPeopleById from "../../hooks/useApiGetPeopleById";
+import useApiGetResourceById from "../../hooks/useApiGetResourceById";
 import './styles/charactersDetail.css'
 import ExpandMoreIcon from "@mui/icons-material/ExpandMore";
 import TableVehicles from "../../components/vehicles/TableVehicles";
@@ -17,7 +17,7 @@ const TableStarships = lazy(() => import('../../components/starships/TableStarsh
 
 const CharacterDetail = () => {
     const {id} = useParams();
-    const {data, loading, error} = useApiGetPeopleById(id);
+    const {data, loading, error} = useApiGetResourceById(id, "people");
     return (
         <>
             {
@@ -26,11 +26,11 @@ const CharacterDetail = () => {
                     <div className="container-characters-detail">
                         <div className="container-div">
                             <Breadcrumbs separator=">" aria-label="breadcrumb" style={{color: "white"}}>
-                                <Link href="/Characters" style={{color: "white"}} underline="none">
+                                <Link href="/characters" style={{color: "white"}} underline="none">
                                     CHARACTERS
                                 </Link>
                                 <Typography color="text.primary">
-                                    <span>{data.name.toUpperCase()}</span>
+                                    <span>{data?.name.toUpperCase()}</span>
                                 </Typography>
                             </Breadcrumbs>
                         </div>
@@ -43,28 +43,25 @@ const CharacterDetail = () => {
                         <div className="container-div">
                             {
                                 data.films.length !== 0 &&
-                                <>
-                                    {/*<h2 style={{ color: "white" }}>Films</h2>*/}
-                                    <Accordion className="container-character-accordion">
-                                        <AccordionSummary
-                                            expandIcon={<ExpandMoreIcon/>}
-                                            aria-controls="panel1a-content"
-                                            id="panel1a-header"
-                                            className="container-character-accordionSumary"
-                                        >
-                                            <Typography className="title">Films</Typography>
-                                        </AccordionSummary>
-                                        <AccordionDetails>
-                                            <Suspense>
-                                                {
-                                                    data.films.map(item => (
-                                                        <ItemMovie url={item} key={item.split("/")[5]}/>
-                                                    ))
-                                                }
-                                            </Suspense>
-                                        </AccordionDetails>
-                                    </Accordion>
-                                </>
+                                <Accordion className="container-character-accordion">
+                                    <AccordionSummary
+                                        expandIcon={<ExpandMoreIcon/>}
+                                        aria-controls="panel1a-content"
+                                        id="panel1a-header"
+                                        className="container-character-accordionSumary"
+                                    >
+                                        <Typography className="title">Films</Typography>
+                                    </AccordionSummary>
+                                    <AccordionDetails>
+                                        <Suspense>
+                                            {
+                                                data.films.map(item => (
+                                                    <ItemMovie url={item} key={item.split("/")[5]}/>
+                                                ))
+                                            }
+                                        </Suspense>
+                                    </AccordionDetails>
+                                </Accordion>
                             }
                         </div>
                         <div className="container-div">
