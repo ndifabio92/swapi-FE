@@ -6,9 +6,11 @@ import { getImage } from '../../utils/getImage';
 
 import './styles/itemStarship.css';
 import Loader from "../ui/Loader/Loader";
+import {swalAlert} from "../../utils/alert";
 
 const ItemStarship = ({ url }) => {
     const { data, loading, error } = useApiGetByUrl(url);
+    if (error) swalAlert('error', 'Error', 'The API call attempt failed.');
     return (
         <>
             {
