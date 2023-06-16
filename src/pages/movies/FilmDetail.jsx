@@ -1,21 +1,18 @@
-import React, {lazy, Suspense} from "react";
-import {Accordion, AccordionDetails, AccordionSummary, Breadcrumbs, Link, Typography} from "@mui/material";
-import {useParams} from 'react-router-dom';
-import Loader from "../../components/ui/Loader/Loader";
+import React, {lazy, Suspense} from 'react';
+import {useParams} from "react-router-dom";
 import useApiGetResourceById from "../../hooks/useApiGetResourceById";
+import Loader from "../../components/ui/Loader/Loader";
+import {Accordion, AccordionDetails, AccordionSummary, Breadcrumbs, Link, Typography} from "@mui/material";
 import ExpandMoreIcon from "@mui/icons-material/ExpandMore";
-import './styles/charactersDetail.css'
+import ListCharacters from "../../components/characters/ListCharacters";
 
-const ItemCharacter = lazy(() => import('../../components/characters/ItemCharacter'));
-const ItemMovieCharacter = lazy(() => import('../../components/movies/ItemMovieCharacter'));
-const ItemPlanet = lazy(() => import('../../components/planets/ItemPlanet'));
+const ItemMovie = lazy(()=> import('../../components/movies/ItemMovie'));
 const TableStarships = lazy(() => import('../../components/starships/TableStarships'));
 const TableVehicles = lazy(() => import('../../components/vehicles/TableVehicles'));
 
-
-const CharacterDetail = () => {
+const FilmDetail = () => {
     const {id} = useParams();
-    const {data, loading, error} = useApiGetResourceById(id, "people");
+    const {data, loading, error} = useApiGetResourceById(id, "films");
     return (
         <>
             {
@@ -24,24 +21,22 @@ const CharacterDetail = () => {
                     <div className="container-characters-detail">
                         <div className="container-div">
                             <Breadcrumbs separator=">" aria-label="breadcrumb" style={{color: "white"}}>
-                                <Link href="/characters" style={{color: "white"}} underline="none">
-                                    CHARACTERS
+                                <Link href="/films" style={{color: "white"}} underline="none">
+                                    FILMS
                                 </Link>
                                 <Typography color="text.primary">
-                                    <span>{data?.name.toUpperCase()}</span>
+                                    <span>{data?.title.toUpperCase()}</span>
                                 </Typography>
                             </Breadcrumbs>
                         </div>
-                        <div className="container-characters-homeworld">
+                        <div className="container-div">
                             <Suspense>
-
-                                <ItemCharacter item={data}/>
-                                <ItemPlanet url={data.homeworld}/>
+                                <ItemMovie url={data.url}/>
                             </Suspense>
                         </div>
                         <div className="container-div">
                             {
-                                data.films.length !== 0 &&
+                                data.characters !== 0 &&
                                 <Accordion className="container-character-accordion">
                                     <AccordionSummary
                                         expandIcon={<ExpandMoreIcon/>}
@@ -49,15 +44,11 @@ const CharacterDetail = () => {
                                         id="panel1a-header"
                                         className="container-character-accordionSumary"
                                     >
-                                        <Typography className="title">Films</Typography>
+                                        <Typography className="title">Characters</Typography>
                                     </AccordionSummary>
                                     <AccordionDetails>
                                         <Suspense>
-                                            {
-                                                data.films.map(item => (
-                                                    <ItemMovieCharacter url={item} key={item.split("/")[5]}/>
-                                                ))
-                                            }
+                                            <ListCharacters urls={data.characters}/>
                                         </Suspense>
                                     </AccordionDetails>
                                 </Accordion>
@@ -81,7 +72,6 @@ const CharacterDetail = () => {
                                         </Suspense>
                                     </AccordionDetails>
                                 </Accordion>
-
                             }
                         </div>
                         <div className="container-div">
@@ -110,4 +100,4 @@ const CharacterDetail = () => {
     )
 }
 
-export default CharacterDetail;
+export default FilmDetail;
