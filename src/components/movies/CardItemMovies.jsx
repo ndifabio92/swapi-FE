@@ -31,7 +31,7 @@ export const CardItemMovies = ({ item }) => {
                 </Typography>
             </CardContent>
             {/*<Button className="btn-character" variant="outlined">*/}
-                <Link className="link-character" to={`/films/${id}`}>
+                <Link className="link-character" to={`/films/${item.url.split("/")[5]}`}>
                     Read More...
                 </Link>
             <Link className="link-character" to="/films/1">
