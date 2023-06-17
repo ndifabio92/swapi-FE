@@ -21,7 +21,7 @@ export const SwapiRoutes = () => {
                 <Routes>
                     <Route exact path="/" element={<HomePage/>} />
                     <Route exact path="/films" element={<Films />} />
-                    <Route exact path="/films/:id" element={<FilmDetail />} />
+                    <Route exact path="/film/:id" element={<FilmDetail />} />
                     <Route exact path="/characters" element={<Characters />} />
                     <Route exact path="/characters/:id" element={<CharacterDetail />}/>
                     <Route exact path="/planets" element={<Planets />} />

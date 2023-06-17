@@ -31,10 +31,10 @@ export const CardItemMovies = ({ item }) => {
                 </Typography>
             </CardContent>
             {/*<Button className="btn-character" variant="outlined">*/}
-                <Link className="link-character" to={`/films/${item.url.split("/")[5]}`}>
+                <Link className="link-character" to={`/film/${id}`}>
                     Read More...
                 </Link>
-            <Link className="link-character" to="/films/1">
+            <Link className="link-character" to="/film/1">
                 Read More...
             </Link>
             {/*</Button>*/}
