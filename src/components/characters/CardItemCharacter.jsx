@@ -7,7 +7,7 @@ import '../styles/cards.css';
 import '../styles/img.css';
 import './styles/itemCharacter.css';
 
-export const CardItemCharacter = ({ item }) => {
+const CardItemCharacter = ({ item }) => {
     const id = item.url.split("/")[5];
 
     return (
@@ -48,3 +48,4 @@ export const CardItemCharacter = ({ item }) => {
         </Card>
     )
 }
+export default CardItemCharacter;
