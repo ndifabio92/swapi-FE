@@ -1,70 +1,26 @@
-.nav-container {
-  background-color: black !important;
-}
-
-.nav-header {
-  width: 100%;
-  max-width: 1280px;
-  display: flex;
-  justify-content: space-between;
-  margin: auto;
-}
-
-.nav-bar {
-  justify-content: end;
-}
-
 .img-logo {
   width: 125px;
 }
 
-.nav-link {
-  color: white !important;
+.container-header {
+  display: flex ;
+  justify-content: space-between;
+  padding: 0 !important;
 }
 
-.nav-link.active {
-  color: yellow !important;
+.container-box-web {
+  width: 100% !important;
+  max-width: 1280px !important;
+  justify-content: space-between !important;
+  margin: auto !important;
 }
 
-.menu-mobile {
-  max-width: 1280px;
-  display: none;
+.container-menu-web {
+  justify-content: flex-end;
+  align-items: center;
 }
 
-@media (max-width: 600px) {
-  .menu-mobile {
-    display: flex;
-    justify-content: flex-end;
-    align-items: center;
-  }
-
-  .navbar-nav {
-    position: absolute;
-    z-index: 2;
-    top: -200px;
-    width: 100%;
-    text-align: center;
-    left: 0;
-  }
-
-  .navbar-nav-active {
-    background-color: black;
-    position: absolute;
-    z-index: 2;
-    top: 100px;
-    width: 100%;
-    text-align: center;
-    left: 0;
-    transition: 0.5s ease-in;
-  }
-
-  .nav-link:hover {
-    background-color: yellow;
-    cursor: pointer;
-    color: black !important;
-  }
-
-  .nav-header {
-    flex-direction: row-reverse;
-  }
+.MuiMenu-paper {
+  width: 100% !important;
+  transition: 0.7s ease-in;
 }
