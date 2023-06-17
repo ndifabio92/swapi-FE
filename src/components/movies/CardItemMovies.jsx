@@ -1,13 +1,20 @@
 import React from 'react';
-import {Link, NavLink} from "react-router-dom";
+import {Link, NavLink, useNavigate} from "react-router-dom";
 import { Button, Card, CardContent, Typography } from "@mui/material";
 import { getImage } from '../../utils/getImage';
 import '../styles/cards.css';
 import '../styles/img.css';
 
 
+
 export const CardItemMovies = ({ item }) => {
+    const navigate = useNavigate();
     const id = item.url.split("/")[5];
+
+    const handleClick = () => {
+        navigate(`/films/${id}`);
+    }
+
     return (
         <Card className="root card">
             <div className="container-img">
@@ -30,10 +37,10 @@ export const CardItemMovies = ({ item }) => {
                     {item.opening_crawl}
                 </Typography>
             </CardContent>
-            <Button className="btn-character" variant="outlined">
-                <Link className="link-character" to={`/films/${id}`}>
+            <Button className="btn-character" variant="outlined" onClick={handleClick}>
+                {/*<Link className="link-character" to={`/films/${id}`}>*/}
                     Read More...
-                </Link>
+                {/*</Link>*/}
             </Button>
         </Card>
 
