@@ -30,11 +30,11 @@ export const CardItemMovies = ({ item }) => {
                     {item.opening_crawl}
                 </Typography>
             </CardContent>
-            <Button className="btn-character" variant="outlined">
+            {/*<Button className="btn-character" variant="outlined">*/}
                 <NavLink className="link-character" to={`/films/${id}`}>
                     Read More...
                 </NavLink>
-            </Button>
+            {/*</Button>*/}
         </Card>
 
     );
