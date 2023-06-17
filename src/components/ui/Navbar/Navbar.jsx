@@ -51,7 +51,7 @@ const Navbar = () => {
                             onClick={handleOpenNavMenu}
                             color="inherit"
                         >
-                            <MenuIcon/>
+                            <MenuIcon style={{color: "yellow"}}/>
                         </IconButton>
                         <Menu
                             id="menu-appbar"
@@ -76,6 +76,13 @@ const Navbar = () => {
                                     onClick={handleCloseNavMenu}
                                     sx={{my: 2, color: 'white', display: 'block'}}
                                     href="/"
+                                >
+                                    HOME
+                                </Button>
+                                <Button
+                                    onClick={handleCloseNavMenu}
+                                    sx={{my: 2, color: 'white', display: 'block'}}
+                                    href="/films"
                                 >
                                     FILMS
                                 </Button>
@@ -123,14 +130,22 @@ const Navbar = () => {
                         <Box sx={{flexGrow: 1, display: {xs: 'none', md: 'flex'}}} className="container-menu-web">
                             <Button
                                 onClick={handleCloseNavMenu}
+                                className="btn-navbar"
                                 sx={{my: 2, color: 'white', display: 'block'}}
                                 href="/"
+                            >
+                                HOME
+                            </Button>
+                            <Button
+                                onClick={handleCloseNavMenu}
+                                className="btn-navbar"
+                                sx={{my: 2, color: 'white', display: 'block'}}
+                                href="/films"
                             >
                                 FILMS
                             </Button>
                             <Button
-                                component={Link}
-
+                                className="btn-navbar"
                                 onClick={handleCloseNavMenu}
                                 sx={{my: 2, color: 'white', display: 'block'}}
                                 href="/characters"
@@ -138,6 +153,7 @@ const Navbar = () => {
                                 CHARACTERS
                             </Button>
                             <Button
+                                className="btn-navbar"
                                 onClick={handleCloseNavMenu}
                                 sx={{my: 2, color: 'white', display: 'block'}}
                                 href="/starships"
@@ -145,6 +161,7 @@ const Navbar = () => {
                                 STARSHIPS
                             </Button>
                             <Button
+                                className="btn-navbar"
                                 onClick={handleCloseNavMenu}
                                 sx={{my: 2, color: 'white', display: 'block'}}
                                 href="/vehicles"

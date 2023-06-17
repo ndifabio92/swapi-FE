@@ -1,0 +1,32 @@
+.intro-container {
+    display: flex;
+    height: 100vh;
+    background-color: black;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    max-width: 1280px;
+    margin:auto;
+}
+
+.intro-text {
+
+    color: yellow;
+    font-size: 20px;
+    text-align: center;
+    animation: crawl-text 8s linear infinite;
+}
+
+
+@media (max-width: 600px) {
+    .intro-container {
+        height: 125vh;
+    }
+}
+
+@media (max-width: 375px) {
+    .intro-container {
+        height: 145vh;
+    }
+}
+

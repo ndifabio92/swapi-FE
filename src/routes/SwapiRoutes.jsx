@@ -10,6 +10,7 @@ import Planets from "../pages/planets/Planets";
 import Starships from "../pages/starships/Starships";
 import Vehicles from "../pages/vehicles/Vehicles";
 import CharacterDetail from "../pages/characters/CharacterDetail";
+import {HomePage} from "../pages/home/HomePage";
 
 
 export const SwapiRoutes = () => {
@@ -18,10 +19,11 @@ export const SwapiRoutes = () => {
             <Navbar />
             <div style={{ marginLeft: "32px", marginRight: "32px" }}>
                 <Routes>
-                    <Route path="/" element={<Films />} />
-                    <Route path="/film/:id" element={<FilmDetail />} />
+                    <Route path="/" element={<HomePage/>} />
+                    <Route path="/films" element={<Films />} />
+                    <Route path="/films/:id" element={<FilmDetail />} />
                     <Route path="/characters" element={<Characters />} />
-                    <Route path="/character/:id" element={<CharacterDetail />}></Route>
+                    <Route path="/characters/:id" element={<CharacterDetail />}/>
                     <Route path="/planets" element={<Planets />} />
                     <Route path="/starships" element={<Starships />} />
                     <Route path="/vehicles" element={<Vehicles />} />

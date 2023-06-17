@@ -1,5 +1,5 @@
 import React from 'react';
-import { Link } from 'react-router-dom';
+import { Link, useLocation } from 'react-router-dom';
 import { Button, Card, CardContent, Typography } from '@mui/material';
 import { getImage } from "../../utils/getImage";
 
@@ -9,7 +9,6 @@ import './styles/itemCharacter.css';
 
 const CardItemCharacter = ({ item }) => {
     const id = item.url.split("/")[5];
-
     return (
         <Card className="root card">
             <div className="container-img">
@@ -41,7 +40,7 @@ const CardItemCharacter = ({ item }) => {
                 </Typography>
             </CardContent>
             <Button className="btn-character" variant="outlined">
-                <Link className="link-character" to={`/character/${id}`}>
+                <Link className="link-character" to={`/characters/${id}`}>
                     Read More...
                 </Link>
             </Button>

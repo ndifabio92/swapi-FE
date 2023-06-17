@@ -1,9 +1,10 @@
-import React, {lazy, Suspense} from "react";
+import React, { lazy, Suspense } from "react";
 import {Accordion, AccordionDetails, AccordionSummary, Breadcrumbs, Link, Typography} from "@mui/material";
-import {useParams} from 'react-router-dom';
+import { useParams } from 'react-router-dom';
 import Loader from "../../components/ui/Loader/Loader";
 import useApiGetResourceById from "../../hooks/useApiGetResourceById";
 import ExpandMoreIcon from "@mui/icons-material/ExpandMore";
+import BreadcrumbsComponent from "../../components/ui/Breadcrumbs/BreadcrumbsComponent";
 import './styles/charactersDetail.css'
 
 const ItemCharacter = lazy(() => import('../../components/characters/ItemCharacter'));
@@ -14,12 +15,13 @@ const TableVehicles = lazy(() => import('../../components/vehicles/TableVehicles
 
 
 const CharacterDetail = () => {
-    const {id} = useParams();
-    const {data, loading, error} = useApiGetResourceById(id, "people");
+    const { id } = useParams();
+    const { data, loading, error } = useApiGetResourceById(id, "people");
+
     return (
         <>
             {
-                loading ? <Loader isLoading={loading}/>
+                loading ? <Loader isLoading={loading} />
                     :
                     <div className="container-characters-detail">
                         <div className="container-div">
@@ -35,8 +37,8 @@ const CharacterDetail = () => {
                         <div className="container-characters-homeworld">
                             <Suspense>
 
-                                <ItemCharacter item={data}/>
-                                <ItemPlanet url={data.homeworld}/>
+                                <ItemCharacter item={data} />
+                                <ItemPlanet url={data.homeworld} />
                             </Suspense>
                         </div>
                         <div className="container-div">
@@ -44,7 +46,7 @@ const CharacterDetail = () => {
                                 data.films.length !== 0 &&
                                 <Accordion className="container-character-accordion">
                                     <AccordionSummary
-                                        expandIcon={<ExpandMoreIcon/>}
+                                        expandIcon={<ExpandMoreIcon />}
                                         aria-controls="panel1a-content"
                                         id="panel1a-header"
                                         className="container-character-accordionSumary"
@@ -55,7 +57,7 @@ const CharacterDetail = () => {
                                         <Suspense>
                                             {
                                                 data.films.map(item => (
-                                                    <ItemMovieCharacter url={item} key={item.split("/")[5]}/>
+                                                    <ItemMovieCharacter url={item} key={item.split("/")[5]} />
                                                 ))
                                             }
                                         </Suspense>
@@ -68,7 +70,7 @@ const CharacterDetail = () => {
                                 data.starships.length !== 0 &&
                                 <Accordion className="container-character-accordion">
                                     <AccordionSummary
-                                        expandIcon={<ExpandMoreIcon/>}
+                                        expandIcon={<ExpandMoreIcon />}
                                         aria-controls="panel1a-content"
                                         id="panel1a-header"
                                         className="container-character-accordionSumary"
@@ -77,7 +79,7 @@ const CharacterDetail = () => {
                                     </AccordionSummary>
                                     <AccordionDetails>
                                         <Suspense>
-                                            <TableStarships urls={data.starships}/>
+                                            <TableStarships urls={data.starships} />
                                         </Suspense>
                                     </AccordionDetails>
                                 </Accordion>
@@ -89,7 +91,7 @@ const CharacterDetail = () => {
                                 data.vehicles.length !== 0 &&
                                 <Accordion className="container-character-accordion">
                                     <AccordionSummary
-                                        expandIcon={<ExpandMoreIcon/>}
+                                        expandIcon={<ExpandMoreIcon />}
                                         aria-controls="panel1a-content"
                                         id="panel1a-header"
                                         className="container-character-accordionSumary"
@@ -98,7 +100,7 @@ const CharacterDetail = () => {
                                     </AccordionSummary>
                                     <AccordionDetails>
                                         <Suspense>
-                                            <TableVehicles urls={data.vehicles}/>
+                                            <TableVehicles urls={data.vehicles} />
                                         </Suspense>
                                     </AccordionDetails>
                                 </Accordion>
