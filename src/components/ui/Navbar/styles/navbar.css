@@ -19,3 +19,8 @@
   justify-content: flex-end;
   align-items: center;
 }
+
+.MuiMenu-paper {
+  width: 100% !important;
+  transition: 0.7s ease-in;
+}
