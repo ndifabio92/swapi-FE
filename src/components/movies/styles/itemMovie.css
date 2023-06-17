@@ -22,9 +22,15 @@
     max-width: 70%;
 }
 
+.container-item-movie {
+    display: flex;
+    justify-content: center;
+}
+
 @media (max-width: 600px) {
-    .acordion-details {
+    .container-item-movie {
         flex-direction: column;
+        gap: 1rem;
     }
 
     .container-opening {

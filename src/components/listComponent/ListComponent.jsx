@@ -5,11 +5,10 @@ import {Sort} from "../sort/Sort";
 import useApiCall from "../../hooks/useApiCall";
 import {swalAlert} from "../../utils/alert";
 import Loader from "../ui/Loader/Loader";
-import './styles/listComponent.css';
 import {sortedList} from "../../utils/sorted";
+import './styles/listComponent.css';
 
 export const ListComponent = ({CardComponent, resource}) => {
-
     const [page, setPage] = useState("1");
     const [query, setQuery] = useState("");
     const {data, loading, error} = useApiCall(resource, page, query);
