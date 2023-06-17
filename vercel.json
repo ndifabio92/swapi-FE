@@ -1,0 +1,12 @@
+{
+  "rewrites": [
+    {
+      "source": "/films/:id",
+      "destination": "/films/:id"
+    },
+    {
+      "source": "/characters",
+      "destination": "/characters/:id"
+    }
+  ]
+}
