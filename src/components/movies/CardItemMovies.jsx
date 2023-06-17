@@ -31,9 +31,12 @@ export const CardItemMovies = ({ item }) => {
                 </Typography>
             </CardContent>
             {/*<Button className="btn-character" variant="outlined">*/}
-                <NavLink className="link-character" to={`/films/${id}`}>
+                <Link className="link-character" to={`/films/${id}`}>
                     Read More...
-                </NavLink>
+                </Link>
+            <Link className="link-character" to="/films/1">
+                Read More...
+            </Link>
             {/*</Button>*/}
         </Card>
 
