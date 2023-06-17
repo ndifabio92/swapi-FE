@@ -1,5 +1,5 @@
 import React from 'react';
-import { Link, useLocation } from 'react-router-dom';
+import {Link, NavLink, useLocation} from 'react-router-dom';
 import { Button, Card, CardContent, Typography } from '@mui/material';
 import { getImage } from "../../utils/getImage";
 
@@ -40,9 +40,9 @@ const CardItemCharacter = ({ item }) => {
                 </Typography>
             </CardContent>
             <Button className="btn-character" variant="outlined">
-                <Link className="link-character" to={`/characters/${id}`}>
+                <NavLink className="link-character" to={`/characters/${id}`}>
                     Read More...
-                </Link>
+                </NavLink>
             </Button>
         </Card>
     )

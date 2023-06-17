@@ -1,5 +1,5 @@
 import React from 'react';
-import { Link } from "react-router-dom";
+import {Link, NavLink} from "react-router-dom";
 import { Button, Card, CardContent, Typography } from "@mui/material";
 import { getImage } from '../../utils/getImage';
 import '../styles/cards.css';
@@ -31,9 +31,9 @@ export const CardItemMovies = ({ item }) => {
                 </Typography>
             </CardContent>
             <Button className="btn-character" variant="outlined">
-                <Link className="link-character" to={`/films/${id}`}>
+                <NavLink className="link-character" to={`/films/${id}`}>
                     Read More...
-                </Link>
+                </NavLink>
             </Button>
         </Card>
 

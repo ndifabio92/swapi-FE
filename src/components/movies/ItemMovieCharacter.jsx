@@ -16,6 +16,7 @@ const ItemMovieCharacter = ({url}) => {
         <>
             {
                 loading ? <Loader isLoading={loading}/> :
+
                     <Accordion className="acordion">
                         <AccordionSummary
                             expandIcon={<ExpandMoreIcon/>}
@@ -24,20 +25,23 @@ const ItemMovieCharacter = ({url}) => {
                         >
                             <Typography className="title">{data.title}</Typography>
                         </AccordionSummary>
-                        <AccordionDetails className='acordion-details'>
-                            <div className='container-img-description'>
-                                <img className="img-card" src={getImage("films", data.title)} alt={data.name}/>
-                                <>
-                                    <Typography className="description">
-                                        <span>Release Date</span> {data.release_date}
-                                    </Typography>
-                                    <Typography className="description">
-                                        <span>Director</span> {data.director}
-                                    </Typography>
-                                    <Typography className="description">
-                                        <span>Producers</span> {data.producer}
-                                    </Typography>
-                                </>
+                        <AccordionDetails>
+                            <div className="container-item-movie">
+                                <div className='container-img-description'>
+                                    <img className="img-card" src={getImage("films", data.title)} alt={data.name}/>
+                                    <>
+                                        a
+                                        <Typography className="description">
+                                            <span>Release Date</span> {data.release_date}
+                                        </Typography>
+                                        <Typography className="description">
+                                            <span>Director</span> {data.director}
+                                        </Typography>
+                                        <Typography className="description">
+                                            <span>Producers</span> {data.producer}
+                                        </Typography>
+                                    </>
+                                </div>
                             </div>
                             <div className='container-opening'>
                                 <Typography className="description">
@@ -46,6 +50,7 @@ const ItemMovieCharacter = ({url}) => {
                             </div>
                         </AccordionDetails>
                     </Accordion>
+
             }
         </>
     )
