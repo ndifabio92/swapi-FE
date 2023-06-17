@@ -1,0 +1,12 @@
+{
+  "redirects": [
+    {
+      "source": "/films/:path",
+      "destination": "/films/:path"
+    },
+    {
+      "source": "/characters/:path",
+      "destination": "/characters/:path"
+    }
+  ]
+}
