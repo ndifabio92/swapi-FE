@@ -1,12 +1,5 @@
 {
-  "redirects": [
-    {
-      "source": "/films/:id",
-      "destination": "/films/:id"
-    },
-    {
-      "source": "/characters",
-      "destination": "/characters/:id"
-    }
+  "rewrites":  [
+    {"source": "/(.*)", "destination": "/"}
   ]
 }
