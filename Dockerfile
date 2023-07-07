@@ -2,14 +2,14 @@ FROM --platform=$BUILDPLATFORM node:18.16-alpine3.17
 
 WORKDIR /app
 
-COPY package.json package-lock.json /app/
+COPY package.json /app/
 
-RUN npm install
+RUN yarn install
 
-COPY public /app
+COPY . .
 
-RUN npm run build
+RUN yarn build
 
 EXPOSE 5173
 
-CMD ["npm","start"]
+CMD ["yarn","dev"]
