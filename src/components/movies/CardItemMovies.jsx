@@ -6,7 +6,7 @@ import '../styles/cards.css';
 import '../styles/img.css';
 
 export const CardItemMovies = ({item}) => {
-    const id = item.url.split("/")[5];
+    const id = item?.url?.split("/")[5];
     return (
         <Card className="root card">
             <div className="container-img">

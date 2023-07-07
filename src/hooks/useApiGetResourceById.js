@@ -11,7 +11,7 @@ const useApiGetResourceById = (id, resource) => {
                 setLoading(true);
                 setError(null);
 
-                const response = await fetch(`${process.env.REACT_APP_BASE_URL_API}${resource}/${id}`);
+                const response = await fetch(`${import.meta.env.VITE_APP_BASE_URL_API}${resource}/${id}`);
                 const jsonData = await response.json();
 
                 setData(jsonData);

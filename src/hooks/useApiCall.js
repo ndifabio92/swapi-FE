@@ -11,7 +11,7 @@ const useApiCall = (resource, page = "1", name = "") => {
         setLoading(true);
         setError(null);
 
-        const response = await fetch(`${process.env.REACT_APP_BASE_URL_API}${resource}/?search=${name}&page=${page}`);
+        const response = await fetch(`${import.meta.env.VITE_APP_BASE_URL_API}${resource}/?search=${name}&page=${page}`);
         const jsonData = await response.json();
 
         setData(jsonData);
