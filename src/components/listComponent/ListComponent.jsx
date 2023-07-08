@@ -7,6 +7,7 @@ import {swalAlert} from "../../utils/alert";
 import Loader from "../ui/Loader/Loader";
 import {sortedList} from "../../utils/sorted";
 import './styles/listComponent.css';
+import PropTypes from "prop-types";
 
 export const ListComponent = ({CardComponent, resource}) => {
     const [page, setPage] = useState("1");
@@ -43,4 +44,9 @@ export const ListComponent = ({CardComponent, resource}) => {
         </>
 
     );
+};
+
+ListComponent.propTypes = {
+    resource: PropTypes.string.isRequired,
+    CardComponent: PropTypes.elementType.isRequired,
 };

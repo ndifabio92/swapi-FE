@@ -1,7 +1,7 @@
-import {getTotalPages, viewRegisters} from "../../utils/paginator";
+import { getTotalPages, viewRegisters } from "../../utils/paginator";
 
 describe('getTotalPages', () => {
-    test('debería devolver el número correcto de páginas', () => {
+    test('should return the correct number of pages', () => {
         const data = {
             count: 25,
             results: [{}, {}, {}, {}, {}, {}, {}, {}, {}, {}],
@@ -11,7 +11,7 @@ describe('getTotalPages', () => {
         expect(totalPages).toBe(3);
     });
 
-    test('debería devolver undefined si no hay datos', () => {
+    test('should return undefined if there is no data', () => {
         const data = null;
 
         const totalPages = getTotalPages(data);
@@ -20,38 +20,37 @@ describe('getTotalPages', () => {
 });
 
 describe('viewRegisters', () => {
-    test('debería devolver los registros iniciales y finales correctamente', () => {
+    test('should return the correct initial and last records', () => {
         const data = [{}, {}, {}, {}, {}, {}, {}, {}, {}, {}];
         const page = 2;
 
-        const {initialRecords, lastRecords} = viewRegisters(data, page);
+        const { initialRecords, lastRecords } = viewRegisters(data, page);
         expect(initialRecords).toBe(11);
         expect(lastRecords).toBe(20);
     });
 
-    test('debería devolver los registros iniciales y finales correctamente si hay menos de 10 registros', () => {
+    test('should return the correct initial and last records if there are less than 10 records', () => {
         const data = [{}, {}, {}, {}, {}];
         const page = 1;
 
-        const {initialRecords, lastRecords} = viewRegisters(data, page);
+        const { initialRecords, lastRecords } = viewRegisters(data, page);
         expect(initialRecords).toBe(1);
         expect(lastRecords).toBe(5);
     });
 
-    test('debería devolver los registros iniciales y finales correctamente si es la primera página', () => {
+    test('should return the correct initial and last records if it is the first page', () => {
         const data = [{}, {}, {}, {}, {}, {}, {}, {}, {}, {}];
         const page = 1;
 
-        const {initialRecords, lastRecords} = viewRegisters(data, page);
+        const { initialRecords, lastRecords } = viewRegisters(data, page);
         expect(initialRecords).toBe(1);
         expect(lastRecords).toBe(10);
     });
 
-    test('sin data', () => {
-
-        const {initialRecords, lastRecords} = viewRegisters();
+    test('should return default values if no data is provided', () => {
+        const { initialRecords, lastRecords } = viewRegisters();
 
         expect(initialRecords).toBe(1);
         expect(lastRecords).toBe(0);
-    })
+    });
 });

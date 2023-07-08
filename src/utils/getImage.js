@@ -1,5 +1,5 @@
-import { FILMS } from '../constants/films';
-import { CHARACTERS } from '../constants/characters';
+import {FILMS} from '../constants/films';
+import {CHARACTERS} from '../constants/characters';
 import {PLANETS} from "../constants/planets";
 import {VEHICLES} from "../constants/vehicles";
 import {STARSHIPS} from "../constants/starships";

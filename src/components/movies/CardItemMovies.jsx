@@ -1,4 +1,5 @@
 import React from 'react';
+import PropTypes from "prop-types";
 import {Link} from "react-router-dom";
 import {Button, Card, CardContent, Typography} from "@mui/material";
 import {getImage} from '../../utils/getImage';
@@ -38,3 +39,19 @@ export const CardItemMovies = ({item}) => {
 
     );
 };
+
+CardItemMovies.propTypes = {
+    item: PropTypes.shape({
+        title: PropTypes.string.isRequired,
+        url: PropTypes.string.isRequired,
+        opening_crawl: PropTypes.string.isRequired,
+        director: PropTypes.string.isRequired,
+        producer: PropTypes.string.isRequired,
+        release_date: PropTypes.string.isRequired,
+        characters: PropTypes.arrayOf(PropTypes.string).isRequired,
+        planets: PropTypes.arrayOf(PropTypes.string).isRequired,
+        starships: PropTypes.arrayOf(PropTypes.string).isRequired,
+        vehicles: PropTypes.arrayOf(PropTypes.string).isRequired,
+        species: PropTypes.arrayOf(PropTypes.string).isRequired,
+    })
+}
