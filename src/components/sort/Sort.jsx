@@ -2,7 +2,7 @@ import React, {useState} from 'react'
 import {Button} from '@mui/material';
 import {ArrowDownward, ArrowUpward} from '@mui/icons-material';
 import SortByAlphaIcon from '@mui/icons-material/SortByAlpha';
-import {sortedList} from '../../utils/sorted';
+import {sortedList} from '../../shared/sorted';
 import './styles/sort.css';
 
 export const Sort = ({data, setSortedData}) => {

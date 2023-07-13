@@ -1,12 +1,12 @@
 import React from "react";
-import { Pagination } from "@mui/material";
-import { getTotalPages, viewRegisters } from "../../utils/paginator";
+import {Pagination} from "@mui/material";
+import {getTotalPages, viewRegisters} from "../../shared/paginator";
 import './styles/paginator.css'
 
-export const Paginator = ({ registers, page, handlePageChange }) => {
+export const Paginator = ({registers, page, handlePageChange}) => {
     const totalRegisters = registers?.count;
     const totalPages = getTotalPages(registers);
-    const { initialRecords, lastRecords } = viewRegisters(registers?.results, page);
+    const {initialRecords, lastRecords} = viewRegisters(registers?.results, page);
 
     return (
         <div className="container-paginator">

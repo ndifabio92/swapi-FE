@@ -1,6 +1,6 @@
 import React from 'react';
 import { Card, CardContent, Typography } from '@mui/material';
-import { getImage } from "../../utils/getImage";
+import { getImage } from "../../shared/getImage";
 
 import '../styles/cards.css';
 import '../styles/img.css';

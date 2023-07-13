@@ -1,5 +1,5 @@
 import {FILMS} from "../../constants/films";
-import {getImage} from "../../utils/getImage";
+import {getImage} from "../../shared/getImage";
 import image_not_found from "../../assets/images/not_found/image_not_found.jpg";
 
 describe('getImage', () => {

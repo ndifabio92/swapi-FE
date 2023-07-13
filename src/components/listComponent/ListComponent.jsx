@@ -3,11 +3,11 @@ import {Paginator} from "../pagination/Paginator";
 import {FormSearch} from "../formSearch/FormSearch";
 import {Sort} from "../sort/Sort";
 import useApiCall from "../../hooks/useApiCall";
-import {swalAlert} from "../../utils/alert";
+import {swalAlert} from "../../shared/alert";
 import Loader from "../ui/Loader/Loader";
-import {sortedList} from "../../utils/sorted";
 import './styles/listComponent.css';
 import PropTypes from "prop-types";
+import {sortedList} from "../../shared/sorted";
 
 export const ListComponent = ({CardComponent, resource}) => {
     const [page, setPage] = useState("1");

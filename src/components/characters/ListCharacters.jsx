@@ -1,8 +1,8 @@
 import React, {lazy, Suspense, useState} from "react";
 import useApiGetAllUrlsFor from "../../hooks/useApiGetAllUrlsFor";
 import Loader from "../ui/Loader/Loader";
-import {sortedList} from "../../utils/sorted";
-import {swalAlert} from "../../utils/alert";
+import {sortedList} from "../../shared/sorted";
+import {swalAlert} from "../../shared/alert";
 
 const CardItemCharacter = lazy(() => import('./CardItemCharacter'))
 const ListCharacters = ({urls}) => {

@@ -2,11 +2,11 @@ import React from 'react'
 import useApiGetByUrl from '../../hooks/useApiGetByUrl';
 import { Accordion, AccordionDetails, AccordionSummary, Typography } from '@mui/material';
 import ExpandMoreIcon from '@mui/icons-material/ExpandMore';
-import { getImage } from '../../utils/getImage';
+import { getImage } from '../../shared/getImage';
 
 import './styles/itemStarship.css';
 import Loader from "../ui/Loader/Loader";
-import {swalAlert} from "../../utils/alert";
+import {swalAlert} from "../../shared/alert";
 
 const ItemStarship = ({ url }) => {
     const { data, loading, error } = useApiGetByUrl(url);

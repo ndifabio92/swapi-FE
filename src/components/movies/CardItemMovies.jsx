@@ -2,7 +2,7 @@ import React from 'react';
 import PropTypes from "prop-types";
 import {Link} from "react-router-dom";
 import {Button, Card, CardContent, Typography} from "@mui/material";
-import {getImage} from '../../utils/getImage';
+import {getImage} from '../../shared/getImage';
 import '../styles/cards.css';
 import '../styles/img.css';
 

@@ -1,22 +1,22 @@
 import React from 'react';
-import {Link, NavLink, useLocation} from 'react-router-dom';
-import { Button, Card, CardContent, Typography } from '@mui/material';
-import { getImage } from "../../utils/getImage";
+import {NavLink} from 'react-router-dom';
+import {Button, Card, CardContent, Typography} from '@mui/material';
+import {getImage} from "../../shared/getImage";
 
 import '../styles/cards.css';
 import '../styles/img.css';
 import './styles/itemCharacter.css';
 
-const CardItemCharacter = ({ item }) => {
+const CardItemCharacter = ({item}) => {
     const id = item.url.split("/")[5];
     return (
         <Card className="root card">
             <div className="container-img">
-                <img className="img-card" src={getImage("characters", item.name)} alt={item.name} />
+                <img className="img-card" src={getImage("characters", item.name)} alt={item.name}/>
             </div>
             <CardContent>
                 <Typography className="title">{item.name}</Typography>
-                <br />
+                <br/>
                 <Typography className="description">
                     <span>birth_year</span> {item.birth_year}
                 </Typography>

@@ -3,6 +3,7 @@ import {useFormik} from 'formik'
 import {formSchema} from '../validations/formSchema'
 import {Button, TextField} from '@mui/material';
 import './styles/form.css';
+import PropTypes from "prop-types";
 
 export const FormSearch = ({query, setQuery}) => {
 
@@ -29,4 +30,9 @@ export const FormSearch = ({query, setQuery}) => {
             <Button variant='outlined' type='submit' className='btn-search'>Search</Button>
         </form>
     )
+}
+
+FormSearch.propTypes ={
+    query: PropTypes.string.isRequired,
+    setQuery: PropTypes.func.isRequired
 }
