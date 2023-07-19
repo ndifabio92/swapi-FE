@@ -1,4 +1,4 @@
-import {sortedList} from "../../utils/sorted";
+import {sortedList} from "../../shared/sorted";
 
 describe('sortedList', () => {
     test('should return the sorted list in ascending order', () => {

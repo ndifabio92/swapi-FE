@@ -8,7 +8,7 @@ import '../styles/img.css';
 import './styles/itemCharacter.css';
 
 const CardItemCharacter = ({item}) => {
-    const id = item.url.split("/")[5];
+    const id = item?.url?.split("/")[5];
     return (
         <Card className="root card">
             <div className="container-img">

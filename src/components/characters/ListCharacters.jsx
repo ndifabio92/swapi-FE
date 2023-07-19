@@ -1,8 +1,9 @@
-import React, {lazy, Suspense, useState} from "react";
+import React, {lazy, Suspense} from "react";
 import useApiGetAllUrlsFor from "../../hooks/useApiGetAllUrlsFor";
 import Loader from "../ui/Loader/Loader";
 import {sortedList} from "../../shared/sorted";
 import {swalAlert} from "../../shared/alert";
+import PropTypes from "prop-types";
 
 const CardItemCharacter = lazy(() => import('./CardItemCharacter'))
 const ListCharacters = ({urls}) => {
@@ -29,3 +30,7 @@ const ListCharacters = ({urls}) => {
 }
 
 export default ListCharacters;
+
+ListCharacters.prototype = {
+    urls: PropTypes.arrayOf(PropTypes.string).isRequired
+}

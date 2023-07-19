@@ -1,11 +1,11 @@
-import React, { lazy, Suspense } from 'react';
+import { lazy, Suspense } from 'react';
 import { useParams } from "react-router-dom";
 import useApiGetResourceById from "../../hooks/useApiGetResourceById";
 import Loader from "../../components/ui/Loader/Loader";
 import {Accordion, AccordionDetails, AccordionSummary, Breadcrumbs, Link, Typography} from "@mui/material";
 import ExpandMoreIcon from "@mui/icons-material/ExpandMore";
 import ListCharacters from "../../components/characters/ListCharacters";
-import BreadcrumbsComponent from "../../components/ui/Breadcrumbs/BreadcrumbsComponent";
+// import BreadcrumbsComponent from "../../components/ui/Breadcrumbs/BreadcrumbsComponent";
 
 const ItemMovie = lazy(() => import('../../components/movies/ItemMovie'));
 const TableStarships = lazy(() => import('../../components/starships/TableStarships'));

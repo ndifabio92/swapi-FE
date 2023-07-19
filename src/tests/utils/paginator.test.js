@@ -1,4 +1,4 @@
-import { getTotalPages, viewRegisters } from "../../utils/paginator";
+import { getTotalPages, viewRegisters } from "../../shared/paginator";
 
 describe('getTotalPages', () => {
     test('should return the correct number of pages', () => {

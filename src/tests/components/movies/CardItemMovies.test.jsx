@@ -3,7 +3,7 @@ import {render, screen} from "@testing-library/react";
 import {CardItemMovies} from "../../../components/movies/CardItemMovies";
 import {MemoryRouter} from "react-router-dom";
 
-describe("se testea la generarion del listado de films", () => {
+describe("The generation of the film list is being tested", () => {
     const item =
         {
             "title": "The Phantom Menace",
@@ -32,7 +32,7 @@ describe("se testea la generarion del listado de films", () => {
             "url": "https://swapi.dev/api/films/4/"
         };
 
-    test('debe hacer match con el snapshot', () => {
+    test('It must match the snapshot', () => {
         const {container} = render(<MemoryRouter><CardItemMovies item={item}/></MemoryRouter>);
         expect(container).toMatchSnapshot();
     });
