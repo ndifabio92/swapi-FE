@@ -1,0 +1,1 @@
+import{r as t}from"./index-ffe4187c.js";const p=r=>{const[o,n]=t.useState([]),[c,e]=t.useState(!0),[u,a]=t.useState(null);return t.useEffect(()=>{(async()=>{try{e(!0),a(null);const l=await(await fetch(r)).json();n(l),e(!1)}catch(s){console.error(s),a(s),e(!1)}})()},[]),{data:o,loading:c,error:u}};export{p as u};

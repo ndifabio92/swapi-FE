@@ -1,6 +1,5 @@
 import { Typography } from '@mui/material'
-import React from 'react'
-import { getImage } from '../../utils/getImage'
+import { getImage } from '../../shared/getImage'
 
 import './styles/itemCharacter.css';
 

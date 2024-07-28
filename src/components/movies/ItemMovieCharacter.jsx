@@ -1,25 +1,25 @@
-import React from 'react'
 import useApiGetByUrl from '../../hooks/useApiGetByUrl';
-import {Accordion, AccordionDetails, AccordionSummary, Typography} from '@mui/material';
-import {getImage} from '../../utils/getImage';
+import { Accordion, AccordionDetails, AccordionSummary, Typography } from '@mui/material';
+import { getImage } from '../../shared/getImage';
 import Loader from "../ui/Loader/Loader";
-import {swalAlert} from "../../utils/alert";
+import { swalAlert } from "../../shared/alert";
 import ExpandMoreIcon from "@mui/icons-material/ExpandMore";
+import PropTypes from "prop-types";
 
 import './styles/itemMovie.css';
 
-const ItemMovieCharacter = ({url}) => {
-    const {data, loading, error} = useApiGetByUrl(url);
+const ItemMovieCharacter = ({ url }) => {
+    const { data, loading, error } = useApiGetByUrl(url);
     if (error) swalAlert('error', 'Error', 'The API call attempt failed.');
 
     return (
         <>
             {
-                loading ? <Loader isLoading={loading}/> :
+                loading ? <Loader isLoading={loading} /> :
 
                     <Accordion className="acordion">
                         <AccordionSummary
-                            expandIcon={<ExpandMoreIcon/>}
+                            expandIcon={<ExpandMoreIcon />}
                             aria-controls="panel1a-content"
                             id="panel1a-header"
                         >
@@ -28,7 +28,7 @@ const ItemMovieCharacter = ({url}) => {
                         <AccordionDetails>
                             <div className="container-item-movie">
                                 <div className='container-img-description'>
-                                    <img className="img-card" src={getImage("films", data.title)} alt={data.name}/>
+                                    <img className="img-card" src={getImage("films", data.title)} alt={data.name} />
                                     <>
                                         a
                                         <Typography className="description">
@@ -54,6 +54,9 @@ const ItemMovieCharacter = ({url}) => {
             }
         </>
     )
+}
+ItemMovieCharacter.propTypes = {
+    url: PropTypes.string.isRequired
 }
 
 export default ItemMovieCharacter

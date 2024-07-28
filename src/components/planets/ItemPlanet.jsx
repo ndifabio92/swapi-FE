@@ -1,8 +1,7 @@
-import React from 'react'
 import useApiGetByUrl from '../../hooks/useApiGetByUrl';
 import { Typography } from '@mui/material';
-import { getImage } from '../../utils/getImage';
-import {swalAlert} from "../../utils/alert";
+import { getImage } from '../../shared/getImage';
+import { swalAlert } from "../../shared/alert";
 
 import './styles/itemPlanet.css'
 
