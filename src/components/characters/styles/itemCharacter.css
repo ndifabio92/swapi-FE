@@ -1,14 +1,14 @@
 .container-character {
-    display: flex;
-    margin-top: 2rem;
-    gap: 2rem;
-    justify-content: flex-start;
+  display: flex;
+  margin-top: 2rem;
+  gap: 2rem;
+  justify-content: flex-start;
 }
 
 .container-character-description {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
 }
 
 .btn-character {
@@ -17,15 +17,15 @@
 }
 
 .link-character {
-    color: yellow !important;
-    text-decoration: none;
+  color: yellow !important;
+  text-decoration: none;
 }
 
 @media (max-width: 767px) {
-    .container-character {
-        flex-direction: column;
-        align-items: center;
-    }
+  .container-character {
+    flex-direction: column;
+    align-items: center;
+  }
 }
 
 @media (max-width: 600px) {
