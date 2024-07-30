@@ -1,0 +1,59 @@
+.form {
+    display: flex;
+    gap: 30px;
+}
+
+.textfield {
+    border: 2px solid yellow !important;
+    border-radius: 25px;
+    height: 40px !important;
+    width: 350px;
+}
+
+.btn-search {
+    /*background-color: yellow !important;*/
+    border-color: yellow !important;
+    color: yellow !important;
+    width: auto !important;
+    height: 40px !important;
+}
+
+.Mui-error {
+    color: white !important;
+    z-index: 1;
+}
+
+.MuiOutlinedInput-notchedOutline {
+    border: 2px solid transparent !important;
+    border-radius: 25px !important;
+    height: 40px !important;
+    width: 300px;
+}
+
+.css-1t8l2tu-MuiInputBase-input-MuiOutlinedInput-input {
+    padding: 0 !important;
+}
+
+.MuiInputBase-root {
+    color: white !important;
+    height: 40px !important;
+    padding-left: 10px !important;
+
+}
+
+@media (max-width: 767px) {
+    .textfield {
+        width: auto;
+    }
+    .btn-search {
+        width: 50%;
+    }
+}
+@media (max-width: 600px) {
+    .textfield {
+        width: auto;
+    }
+    .btn-search {
+        width: 50%;
+    }
+}

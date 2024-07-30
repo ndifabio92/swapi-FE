@@ -1,0 +1,24 @@
+.MuiPaper-root {
+    background: black !important;
+}
+
+.MuiSvgIcon-root,
+.MuiTablePagination-root,
+.Mui-active,
+.MuiButtonBase-root:hover,
+.MuiTablePagination-select,
+.Mui-selected {
+    color: yellow !important;
+}
+
+.MuiTableHead-root > tr > th,
+.MuiTableCell-root,
+.MuiTableBody-root > tr > th,
+.MuiList-root {
+    color: white !important
+}
+
+.MuiToolbar-root {
+    display: flex;
+    align-items: baseline !important;
+}

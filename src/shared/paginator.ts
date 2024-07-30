@@ -1,23 +1,40 @@
-// export const getTotalPages = (data) => {
+import { Films, Result as ResultFilms } from "../interfaces/Films";
+import { People, Result as ResultPeople } from "../interfaces/People";
 
-//     const totalRegisters = data?.count;
-//     const actualRegisters = data?.results?.length;
-//     const limit = 10;
+interface ViewRegistersParams {
+    data: ResultFilms[] | ResultPeople[] | null; // Puedes reemplazar `any` con el tipo específico de los elementos de `data`
+    page: number;
+}
 
-//     if (!totalRegisters && !actualRegisters) return null;
-//     if (!actualRegisters < limit) return Math.ceil(totalRegisters / limit);
-// };
 
-// export const viewRegisters = (data = [], page = 1) => {
+export const getTotalPages = (data: People | Films) => {
+    if (!data) return 0;
 
-//     if (data?.length < 10) {
-//         const lastRecords = (data?.length) + (10 * (page - 1));
-//         const initialRecords = (lastRecords - data.length) + 1;
+    const totalRegisters = data.count;
+    const pageSize = 10;
 
-//         return { initialRecords, lastRecords };
-//     }
-//     const initialRecords = ((+page === 1) ? 1 : ((page - 1) * data?.length) + 1);
-//     const lastRecords = (data?.length) * page;
+    if (totalRegisters === 0) return 0;
 
-//     return { initialRecords, lastRecords };
-// };
+    return Math.ceil(totalRegisters / pageSize);
+};
+
+export const viewRegisters = ({ data, page }: ViewRegistersParams) => {
+    if (!data || data.length === 0) {
+        return { initialRecords: 0, lastRecords: 0 };
+    }
+
+    const totalItems = data.length;
+    const pageSize = 10;
+
+    if (totalItems <= pageSize) {
+        const lastRecords = totalItems;
+        const initialRecords = 1;
+
+        return { initialRecords, lastRecords };
+    }
+
+    const initialRecords = (page - 1) * pageSize + 1;
+    const lastRecords = Math.min(page * pageSize, totalItems);
+
+    return { initialRecords, lastRecords };
+};

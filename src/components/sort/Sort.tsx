@@ -4,10 +4,18 @@
 // import SortByAlphaIcon from '@mui/icons-material/SortByAlpha';
 // import { sortedList } from '../../shared/sorted';
 // import './styles/sort.css';
+// import { People } from '../../interfaces/People';
+// import { Films } from '../../interfaces/Films';
 
-// export const Sort = ({ data, setSortedData }) => {
+// interface SortProps<T> {
+//     data: T[];
+//     setSortedData: (sortedData: T[]) => void;
+//     isFilm: boolean
+// }
+
+// export const Sort = <T extends People | Films>({ data, setSortedData }: SortProps<T>) => {
 //     const [ascending, setAscending] = useState(true);
-//     const name = data[0]?.name ? "name" : "title";
+//     const name = isFilm ? "name" : "title";
 //     const toggleSortOrder = () => {
 //         setAscending(!ascending)
 //         setSortedData(sortedList([...data], name, ascending));

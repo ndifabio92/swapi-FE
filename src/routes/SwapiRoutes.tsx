@@ -1,6 +1,8 @@
 import { Route, Routes } from "react-router-dom";
 import Navbar from "../components/ui/Navbar/Navbar";
 import HomePage from "../pages/home/HomePage";
+import NotFoundPage from "../pages/not-found/NotFound";
+import Films from "../pages/films/Films";
 
 
 export const SwapiRoutes = () => {
@@ -10,7 +12,7 @@ export const SwapiRoutes = () => {
             <div style={{ marginLeft: "32px", marginRight: "32px" }}>
                 <Routes>
                     <Route path="/" element={<HomePage />} />
-                    <Route path="/films" element={<><h1>films</h1></>} />
+                    <Route path="/films" element={<Films />} />
                     <Route path="/films/:id" element={<>films/:id</>} />
                     <Route path="/characters" element={<>characters</>} />
                     <Route path="/characters/:id" element={<></>} />
@@ -18,7 +20,7 @@ export const SwapiRoutes = () => {
                     <Route path="/starships" element={<></>} />
                     <Route path="/vehicles" element={<></>} />
 
-                    <Route path="*" element={<></>} />
+                    <Route path="*" element={<NotFoundPage />} />
                 </Routes>
             </div>
         </>

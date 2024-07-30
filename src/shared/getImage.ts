@@ -8,7 +8,7 @@ import image_not_found from "../assets/images/not_found/image_not_found.jpg"
 
 interface Props {
     resource: string,
-    title: string
+    title?: string
 }
 
 const images: { [key: string]: { [key: string]: string } } = {
@@ -20,5 +20,8 @@ const images: { [key: string]: { [key: string]: string } } = {
 };
 
 export const getImage = ({ resource, title }: Props) => {
+    if (title === undefined) {
+        return image_not_found;
+    }
     return images[resource]?.[title] || image_not_found;
 };
