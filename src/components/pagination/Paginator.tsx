@@ -2,7 +2,7 @@ import { Pagination } from "@mui/material";
 import { getTotalPages, viewRegisters } from "../../shared/paginator";
 import './styles/paginator.css'
 import { People } from "../../interfaces/People";
-import { Films } from "../../interfaces/Films";
+import { Films } from "../../interfaces/Film";
 
 interface Props {
     page: number,

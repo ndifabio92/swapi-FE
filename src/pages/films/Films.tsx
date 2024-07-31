@@ -1,6 +1,6 @@
 import { CardItemFilms } from "../../components/films/CardItemFilms";
 import { ListComponent } from "../../components/listComponent/ListComponent";
-import { Result } from "../../interfaces/Films";
+import { Result } from "../../interfaces/Film";
 
 type CardComponentType<T> = React.ComponentType<{ item: T }>;
 

@@ -5,7 +5,7 @@ import Loader from "../ui/Loader/Loader";
 import { swalAlert } from "../../shared/alerts";
 import ExpandMoreIcon from "@mui/icons-material/ExpandMore";
 
-import { Result } from '../../interfaces/Films';
+import { Result } from '../../interfaces/Film';
 import './styles/itemFilm.css';
 
 interface Props {
@@ -34,7 +34,6 @@ const ItemFilmCharacter = ({ url }: Props) => {
                                 <div className='container-img-description'>
                                     <img className="img-card" src={getImage({ resource: "films", title: data?.title })} alt={data?.title} />
                                     <>
-                                        a
                                         <Typography className="description">
                                             <span>Release Date</span> {data?.release_date}
                                         </Typography>

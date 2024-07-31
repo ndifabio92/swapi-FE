@@ -1,7 +1,7 @@
 import { Link } from "react-router-dom";
 import { Button, Card, CardContent, Typography } from "@mui/material";
 import { getImage } from '../../shared/getImage';
-import { Result } from "../../interfaces/Films";
+import { Result } from "../../interfaces/Film";
 import '../styles/cards.css';
 import '../styles/img.css';
 

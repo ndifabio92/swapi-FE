@@ -1,4 +1,4 @@
-import { Films, Result as ResultFilms } from "../interfaces/Films";
+import { Films, Result as ResultFilms } from "../interfaces/Film";
 import { People, Result as ResultPeople } from "../interfaces/People";
 
 interface ViewRegistersParams {

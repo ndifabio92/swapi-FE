@@ -1,22 +1,20 @@
 import useApiCall from "../../hooks/useApiCall";
 import { swalAlert } from "../../shared/alerts";
 import Loader from "../ui/Loader/Loader";
-import './styles/listComponent.css';
-import { sortedList } from "../../shared/sorted";
 import { useState } from "react";
 import { FormSearch } from "../formSearch/FormSearch";
-import { Sort } from "../sort/Sort";
 
 import { People } from "../../interfaces/People";
-import { Films } from "../../interfaces/Films";
+import { Films } from "../../interfaces/Film";
 import { Paginator } from "../pagination/Paginator";
+
+import './styles/listComponent.css';
 
 type CardComponentType<T> = React.ComponentType<{ item: T }>;
 
 interface Props<T> {
     resource: string;
     CardComponent: CardComponentType<T>;
-    // Otros props que puedas necesitar
 }
 
 

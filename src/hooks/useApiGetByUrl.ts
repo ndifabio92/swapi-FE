@@ -1,7 +1,7 @@
 import { useState, useEffect } from 'react';
 import axios, { AxiosError } from 'axios';
 
-const useApiGetByUrl = <T,>(url: string) => {
+const useApiGetByUrl = <T,>(url: string | undefined) => {
     const [data, setData] = useState<T | null>(null);
     const [loading, setLoading] = useState<boolean>(true);
     const [error, setError] = useState<Error | null>(null);
@@ -12,8 +12,10 @@ const useApiGetByUrl = <T,>(url: string) => {
                 setLoading(true);
                 setError(null);
 
-                const response = await axios.get<T>(url);
-                setData(response.data);
+                if (url) {
+                    const response = await axios.get<T>(url);
+                    setData(response.data);
+                }
 
             } catch (error) {
                 if (axios.isAxiosError(error)) {

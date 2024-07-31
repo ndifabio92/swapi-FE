@@ -3,12 +3,12 @@ import { Typography } from '@mui/material';
 import { getImage } from '../../shared/getImage';
 import Loader from "../ui/Loader/Loader";
 import { swalAlert } from "../../shared/alerts";
+import { Result } from '../../interfaces/Film';
 
 import './styles/itemFilm.css';
-import { Result } from '../../interfaces/Films';
 
 interface Props {
-    url: string
+    url: string | undefined
 }
 
 const ItemFilm = ({ url }: Props) => {

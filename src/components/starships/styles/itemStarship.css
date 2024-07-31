@@ -1,0 +1,24 @@
+.container-starship-img {
+  display: flex;
+  justify-content: center;
+}
+
+.img-starship {
+  object-fit: cover;
+  object-position: top;
+  width: auto;
+  height: 300px;
+}
+
+.acordion-starship-details {
+  display: flex;
+  gap: 2rem;
+  justify-content: center;
+}
+
+.container-starship-description {
+  display: flex;
+  width: auto;
+  flex-direction: column;
+  justify-content: center !important;
+}

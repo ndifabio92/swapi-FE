@@ -93,6 +93,13 @@ const Navbar = () => {
                                 >
                                     VEHICLES
                                 </Button>
+                                <Button
+                                    onClick={handleCloseNavMenu}
+                                    sx={{ my: 2, color: 'white', display: 'block' }}
+                                    href="/planets"
+                                >
+                                    PLANETS
+                                </Button>
                             </MenuItem>
                         </Menu>
                     </Box>
@@ -151,6 +158,13 @@ const Navbar = () => {
                                 href="/vehicles"
                             >
                                 VEHICLES
+                            </Button>
+                            <Button
+                                onClick={handleCloseNavMenu}
+                                sx={{ my: 2, color: 'white', display: 'block' }}
+                                href="/planets"
+                            >
+                                PLANETS
                             </Button>
                         </Box>
                     </Box>

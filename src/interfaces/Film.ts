@@ -1,4 +1,4 @@
-export interface Films {
+export interface Film {
     count: number;
     next: null;
     previous: null;
