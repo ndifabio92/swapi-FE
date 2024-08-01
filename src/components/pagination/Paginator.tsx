@@ -17,7 +17,7 @@ export const Paginator = ({ registers, page, handlePageChange }: Props) => {
         ? viewRegisters({ data: registers.results, page })
         : { initialRecords: 0, lastRecords: 0 };
 
-    const handlePageChangeInternal = (event: React.ChangeEvent<unknown>, value: number) => {
+    const handlePageChangeInternal = (_event: React.ChangeEvent<unknown>, value: number) => {
         handlePageChange(value);
     };
 
