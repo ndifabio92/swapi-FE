@@ -6,6 +6,7 @@ import { Accordion, AccordionDetails, AccordionSummary, Breadcrumbs, Link, Typog
 import ExpandMoreIcon from "@mui/icons-material/ExpandMore";
 import ListCharacters from "../../components/characters/ListCharacters";
 import { Result as ResultFilm } from '../../interfaces/Film';
+import { ResourceType } from '../../components/types/ResourceType';
 
 const ItemMovie = lazy(() => import('../../components/films/ItemFilm'));
 // const TableStarships = lazy(() => import('../../components/starships/TableStarships'));
@@ -13,7 +14,7 @@ const ItemMovie = lazy(() => import('../../components/films/ItemFilm'));
 
 const FilmDetail = () => {
     const { id } = useParams();
-    const { data, loading } = useApiGetResourceById<ResultFilm>({ id: id, resource: "films" });
+    const { data, loading } = useApiGetResourceById<ResultFilm>({ id: id, resource: ResourceType.Films });
     return (
         <>
             {
@@ -57,42 +58,42 @@ const FilmDetail = () => {
                         </div>
                         <div className="container-div">
                             {
-                                data?.starships.length !== 0 &&
-                                <Accordion className="container-character-accordion">
-                                    <AccordionSummary
-                                        expandIcon={<ExpandMoreIcon />}
-                                        aria-controls="panel1a-content"
-                                        id="panel1a-header"
-                                        className="container-character-accordionSumary"
-                                    >
-                                        <Typography className="title">Starships</Typography>
-                                    </AccordionSummary>
-                                    <AccordionDetails>
-                                        <Suspense>
-                                            {/* <TableStarships urls={data?.starships} /> */}
-                                        </Suspense>
-                                    </AccordionDetails>
-                                </Accordion>
+                                // data?.starships.length !== 0 &&
+                                // <Accordion className="container-character-accordion">
+                                //     <AccordionSummary
+                                //         expandIcon={<ExpandMoreIcon />}
+                                //         aria-controls="panel1a-content"
+                                //         id="panel1a-header"
+                                //         className="container-character-accordionSumary"
+                                //     >
+                                //         <Typography className="title">Starships</Typography>
+                                //     </AccordionSummary>
+                                //     <AccordionDetails>
+                                //         <Suspense>
+                                //             {/* <TableStarships urls={data?.starships} /> */}
+                                //         </Suspense>
+                                //     </AccordionDetails>
+                                // </Accordion>
                             }
                         </div>
                         <div className="container-div">
                             {
-                                data?.vehicles.length !== 0 &&
-                                <Accordion className="container-character-accordion">
-                                    <AccordionSummary
-                                        expandIcon={<ExpandMoreIcon />}
-                                        aria-controls="panel1a-content"
-                                        id="panel1a-header"
-                                        className="container-character-accordionSumary"
-                                    >
-                                        <Typography className="title">Vehicles</Typography>
-                                    </AccordionSummary>
-                                    <AccordionDetails>
-                                        <Suspense>
-                                            {/* <TableVehicles urls={data?.vehicles} /> */}
-                                        </Suspense>
-                                    </AccordionDetails>
-                                </Accordion>
+                                // data?.vehicles.length !== 0 &&
+                                // <Accordion className="container-character-accordion">
+                                //     <AccordionSummary
+                                //         expandIcon={<ExpandMoreIcon />}
+                                //         aria-controls="panel1a-content"
+                                //         id="panel1a-header"
+                                //         className="container-character-accordionSumary"
+                                //     >
+                                //         <Typography className="title">Vehicles</Typography>
+                                //     </AccordionSummary>
+                                //     <AccordionDetails>
+                                //         <Suspense>
+                                //             {/* <TableVehicles urls={data?.vehicles} /> */}
+                                //         </Suspense>
+                                //     </AccordionDetails>
+                                // </Accordion>
                             }
                         </div>
                     </div>

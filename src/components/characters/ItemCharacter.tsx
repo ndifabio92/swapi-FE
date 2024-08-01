@@ -1,6 +1,7 @@
 import { Typography } from '@mui/material'
 import { getImage } from '../../shared/getImage'
-import { Result } from '../../interfaces/People';
+import { Result } from '../../interfaces/Character';
+import { ResourceType } from '../types/ResourceType';
 
 import './styles/itemCharacter.css';
 
@@ -8,7 +9,7 @@ const ItemCharacter = ({ item }: { item: Result | null }) => {
     return (
         <div className='container-character'>
             <div className="container-img">
-                <img className="img-card" src={getImage({ resource: "characters", title: item?.name })} alt={item?.name} />
+                <img className="img-card" src={getImage({ resource: ResourceType.Characters, title: item?.name })} alt={item?.name} />
             </div>
             <div className='container-character-description'>
                 <Typography className="description">

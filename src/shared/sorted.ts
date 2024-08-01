@@ -1,13 +1,15 @@
-import { People, Result } from "../interfaces/People";
-
-interface Props {
-    data: People;
-    sortField: keyof Result;
+interface Props<T> {
+    data: T[] | null;
+    sortField: keyof T;
     ascending: boolean;
 }
 
-export const sortedList = ({ data, sortField, ascending }: Props): Result[] => {
-    return data.results.slice().sort((a, b) => {
+export const sortedList = <T>({ data, sortField, ascending }: Props<T>): T[] => {
+    if (!data) {
+        return [];
+    }
+
+    return data.slice().sort((a, b) => {
         const aField = a[sortField];
         const bField = b[sortField];
 
@@ -18,3 +20,4 @@ export const sortedList = ({ data, sortField, ascending }: Props): Result[] => {
         return 0;
     });
 };
+

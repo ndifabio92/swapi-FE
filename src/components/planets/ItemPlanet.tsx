@@ -5,15 +5,16 @@ import { swalAlert } from "../../shared/alerts";
 import { Planet } from '../../interfaces/Planet';
 
 import './styles/itemPlanet.css'
+import { ResourceType } from '../types/ResourceType';
 
-const ItemPlanet = ({ url }: { url: string }) => {
+const ItemPlanet = ({ url }: { url: string | undefined }) => {
     // eslint-disable-next-line @typescript-eslint/no-unused-vars
     const { data, loading, error } = useApiGetByUrl<Planet>(url);
     if (error) swalAlert({ icon: 'error', title: 'Error', text: 'The API call attempt failed.' });
     return (
         <div className='container-planet'>
             <div className="container-img">
-                <img className="img-card" src={getImage({ resource: "planets", title: data?.name })} alt={data?.name} />
+                <img className="img-card" src={getImage({ resource: ResourceType.Planets, title: data?.name })} alt={data?.name} />
             </div>
             <div className='container-planet-description'>
                 <Typography className="title">{data?.name}</Typography>

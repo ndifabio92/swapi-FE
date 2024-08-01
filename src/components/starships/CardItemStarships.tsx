@@ -1,15 +1,16 @@
 import { Card, CardContent, Typography } from '@mui/material';
 import { getImage } from "../../shared/getImage";
+import { ResourceType } from '../types/ResourceType';
+import { Starship } from '../../interfaces/StarShip';
 
 import '../styles/cards.css';
 import '../styles/img.css';
-import { Starship } from '../../interfaces/StarShip';
 
 export const CardItemStarships = ({ item }: { item: Starship }) => {
     return (
         <Card className="root card">
             <div className="container-img">
-                <img className="img-card" src={getImage({ resource: "starships", title: item.name })} alt={item.name} />
+                <img className="img-card" src={getImage({ resource: ResourceType.Starships, title: item.name })} alt={item.name} />
             </div>
             <CardContent>
                 <Typography className="title">{item.name}</Typography>

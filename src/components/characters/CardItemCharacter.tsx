@@ -1,7 +1,8 @@
 import { NavLink } from 'react-router-dom';
 import { Button, Card, CardContent, Typography } from '@mui/material';
 import { getImage } from "../../shared/getImage";
-import { Result } from '../../interfaces/People';
+import { Result } from '../../interfaces/Character';
+import { ResourceType } from '../types/ResourceType';
 
 import '../styles/cards.css';
 import '../styles/img.css';
@@ -12,7 +13,7 @@ const CardItemCharacter = ({ item }: { item: Result }) => {
     return (
         <Card className="root card">
             <div className="container-img">
-                <img className="img-card" src={getImage({ resource: "characters", title: item.name })} alt={item.name} />
+                <img className="img-card" src={getImage({ resource: ResourceType.Characters, title: item.name })} alt={item.name} />
             </div>
             <CardContent>
                 <Typography className="title">{item.name}</Typography>

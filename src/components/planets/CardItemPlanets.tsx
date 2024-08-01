@@ -1,6 +1,7 @@
 import { Card, CardContent, Typography } from '@mui/material';
 import { getImage } from "../../shared/getImage";
 import { Planet } from '../../interfaces/Planet';
+import { ResourceType } from '../types/ResourceType';
 
 import '../styles/cards.css';
 import '../styles/img.css';
@@ -9,7 +10,7 @@ export const CardItemPlanets = ({ item }: { item: Planet }) => {
     return (
         <Card className="root card">
             <div className="container-img">
-                <img className="img-card" src={getImage({ resource: "planets", title: item.name })} alt={item.name} />
+                <img className="img-card" src={getImage({ resource: ResourceType.Planets, title: item.name })} alt={item.name} />
             </div>
             <CardContent>
                 <Typography className="title">{item.name}</Typography>

@@ -1,13 +1,13 @@
-import { Films, Result as ResultFilms } from "../interfaces/Film";
-import { People, Result as ResultPeople } from "../interfaces/People";
+import { Film, Result as ResultFilms } from '../interfaces/Film';
+import { Character, Result as ResultCharacter } from "../interfaces/Character";
 
 interface ViewRegistersParams {
-    data: ResultFilms[] | ResultPeople[] | null; // Puedes reemplazar `any` con el tipo específico de los elementos de `data`
+    data: ResultFilms[] | ResultCharacter[] | null;
     page: number;
 }
 
 
-export const getTotalPages = (data: People | Films) => {
+export const getTotalPages = (data: Character | Film) => {
     if (!data) return 0;
 
     const totalRegisters = data.count;

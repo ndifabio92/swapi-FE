@@ -4,6 +4,7 @@ import { getImage } from '../../shared/getImage';
 import { Result } from "../../interfaces/Film";
 import '../styles/cards.css';
 import '../styles/img.css';
+import { ResourceType } from "../types/ResourceType";
 
 interface Props {
     item: Result
@@ -14,7 +15,7 @@ export const CardItemFilms = ({ item }: Props) => {
     return (
         <Card className="root card">
             <div className="container-img">
-                <img className="img-card" src={getImage({ resource: "films", title: item.title })} alt={item.title} />
+                <img className="img-card" src={getImage({ resource: ResourceType.Films, title: item.title })} alt={item.title} />
             </div>
             <CardContent>
                 <Typography className="title">{item.title}</Typography>

@@ -1,10 +1,11 @@
 import { ListComponent } from "../../components/listComponent/ListComponent";
 import { CardItemStarships } from "../../components/starships/CardItemStarships";
+import { ResourceType } from "../../components/types/ResourceType";
 
 const Starships = () => {
     return (
         <ListComponent
-            resource="starships"
+            resource={ResourceType.Starships}
             CardComponent={CardItemStarships}
         />
     )

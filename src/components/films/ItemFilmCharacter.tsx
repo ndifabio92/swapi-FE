@@ -4,8 +4,9 @@ import { getImage } from '../../shared/getImage';
 import Loader from "../ui/Loader/Loader";
 import { swalAlert } from "../../shared/alerts";
 import ExpandMoreIcon from "@mui/icons-material/ExpandMore";
-
+import { ResourceType } from '../types/ResourceType';
 import { Result } from '../../interfaces/Film';
+
 import './styles/itemFilm.css';
 
 interface Props {
@@ -32,7 +33,7 @@ const ItemFilmCharacter = ({ url }: Props) => {
                         <AccordionDetails>
                             <div className="container-item-movie">
                                 <div className='container-img-description'>
-                                    <img className="img-card" src={getImage({ resource: "films", title: data?.title })} alt={data?.title} />
+                                    <img className="img-card" src={getImage({ resource: ResourceType.Films, title: data?.title })} alt={data?.title} />
                                     <>
                                         <Typography className="description">
                                             <span>Release Date</span> {data?.release_date}

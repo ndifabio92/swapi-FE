@@ -1,4 +1,3 @@
-import React from 'react'
 import useApiGetByUrl from '../../hooks/useApiGetByUrl';
 import { Accordion, AccordionDetails, AccordionSummary, Typography } from '@mui/material';
 import ExpandMoreIcon from '@mui/icons-material/ExpandMore';
@@ -6,67 +5,70 @@ import { getImage } from '../../shared/getImage';
 
 import './styles/itemStarship.css';
 import Loader from "../ui/Loader/Loader";
-import {swalAlert} from "../../shared/alert";
+import { swalAlert } from "../../shared/alerts";
+import { Starship } from '../../interfaces/StarShip';
+import { ResourceType } from '../types/ResourceType';
 
-const ItemStarship = ({ url }) => {
-    const { data, loading, error } = useApiGetByUrl(url);
-    if (error) swalAlert('error', 'Error', 'The API call attempt failed.');
+const ItemStarship = ({ url }: { url: string }) => {
+    const { data, loading, error } = useApiGetByUrl<Starship>(url);
+    if (error) swalAlert({ icon: 'error', title: 'Error', text: 'The API call attempt failed.' });
+
     return (
         <>
             {
-                loading ? <Loader isLoading={loading}/> :
-                <Accordion className="acordion">
-                    <AccordionSummary
-                        expandIcon={<ExpandMoreIcon />}
-                        aria-controls="panel1a-content"
-                        id="panel1a-header"
-                    >
-                        <Typography className="title">{data.name}</Typography>
-                    </AccordionSummary>
-                    <AccordionDetails className='acordion-starship-details'>
-                        <div className="container-starship-img">
-                            <img className="img-starship" src={getImage("starships", data.name)} alt={data.name} />
-                        </div>
-                        <div className='container-starship-description'>
-                            <Typography className="description">
-                                <span>Model</span> {data.model}
-                            </Typography>
-                            <Typography className="description">
-                                <span>Manufacturer</span> {data.manufacturer}
-                            </Typography>
-                            <Typography className="description">
-                                <span>Cost in Credits</span> {data.cost_in_credits}
-                            </Typography>
-                            <Typography className="description">
-                                <span>Length</span> {data.length}
-                            </Typography>
-                            <Typography className="description">
-                                <span>Max Atmosphering Speed</span> {data.max_atmosphering_speed}
-                            </Typography>
-                            <Typography className="description">
-                                <span>Crew</span> {data.crew}
-                            </Typography>
-                            <Typography className="description">
-                                <span>Passengers</span> {data.passengers}
-                            </Typography>
-                            <Typography className="description">
-                                <span>Cargo Capacity</span> {data.cargo_capacity}
-                            </Typography>
-                            <Typography className="description">
-                                <span>Consumables</span> {data.consumables}
-                            </Typography>
-                            <Typography className="description">
-                                <span>Hyperdrive Rating</span> {data.hyperdrive_rating}
-                            </Typography>
-                            <Typography className="description">
-                                <span>MGLT</span> {data.MGLT}
-                            </Typography>
-                            <Typography className="description">
-                                <span>Starship Class</span> {data.starship_class}
-                            </Typography>
-                        </div>
-                    </AccordionDetails>
-                </Accordion>
+                loading ? <Loader isLoading={loading} /> :
+                    <Accordion className="acordion">
+                        <AccordionSummary
+                            expandIcon={<ExpandMoreIcon />}
+                            aria-controls="panel1a-content"
+                            id="panel1a-header"
+                        >
+                            <Typography className="title">{data?.name}</Typography>
+                        </AccordionSummary>
+                        <AccordionDetails className='acordion-starship-details'>
+                            <div className="container-starship-img">
+                                <img className="img-starship" src={getImage({ resource: ResourceType.Starships, title: data?.name })} alt={data?.name} />
+                            </div>
+                            <div className='container-starship-description'>
+                                <Typography className="description">
+                                    <span>Model</span> {data?.model}
+                                </Typography>
+                                <Typography className="description">
+                                    <span>Manufacturer</span> {data?.manufacturer}
+                                </Typography>
+                                <Typography className="description">
+                                    <span>Cost in Credits</span> {data?.cost_in_credits}
+                                </Typography>
+                                <Typography className="description">
+                                    <span>Length</span> {data?.length}
+                                </Typography>
+                                <Typography className="description">
+                                    <span>Max Atmosphering Speed</span> {data?.max_atmosphering_speed}
+                                </Typography>
+                                <Typography className="description">
+                                    <span>Crew</span> {data?.crew}
+                                </Typography>
+                                <Typography className="description">
+                                    <span>Passengers</span> {data?.passengers}
+                                </Typography>
+                                <Typography className="description">
+                                    <span>Cargo Capacity</span> {data?.cargo_capacity}
+                                </Typography>
+                                <Typography className="description">
+                                    <span>Consumables</span> {data?.consumables}
+                                </Typography>
+                                <Typography className="description">
+                                    <span>Hyperdrive Rating</span> {data?.hyperdrive_rating}
+                                </Typography>
+                                <Typography className="description">
+                                    <span>MGLT</span> {data?.MGLT}
+                                </Typography>
+                                <Typography className="description">
+                                    <span>Starship Class</span> {data?.starship_class}
+                                </Typography>
+                            </div>
+                        </AccordionDetails>
+                    </Accordion>
             }
         </>
     )

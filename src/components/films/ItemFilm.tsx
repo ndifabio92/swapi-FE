@@ -6,6 +6,7 @@ import { swalAlert } from "../../shared/alerts";
 import { Result } from '../../interfaces/Film';
 
 import './styles/itemFilm.css';
+import { ResourceType } from '../types/ResourceType';
 
 interface Props {
     url: string | undefined
@@ -21,7 +22,7 @@ const ItemFilm = ({ url }: Props) => {
                 loading ? <Loader isLoading={loading} /> :
                     <div className="container-item-movie">
                         <div className='container-img-description'>
-                            <img className="img-card" src={getImage({ resource: "films", title: data?.title })} alt={data?.title} />
+                            <img className="img-card" src={getImage({ resource: ResourceType.Films, title: data?.title })} alt={data?.title} />
                             <>
                                 <Typography className="description">
                                     <span>Release Date</span> {data?.release_date}

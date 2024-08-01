@@ -1,4 +1,4 @@
-export interface People {
+export interface Character {
     count: number;
     next: string;
     previous: null;
@@ -7,6 +7,7 @@ export interface People {
 
 export interface Result {
     name: string;
+    title: string;
     height: string;
     mass: string;
     hair_color: string;

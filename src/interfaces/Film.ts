@@ -7,6 +7,7 @@ export interface Film {
 
 export interface Result {
     title: string;
+    name: string;
     episode_id: number;
     opening_crawl: string;
     director: string;

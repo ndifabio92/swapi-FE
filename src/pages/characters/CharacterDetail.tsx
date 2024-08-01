@@ -4,19 +4,20 @@ import { useParams } from 'react-router-dom';
 import Loader from "../../components/ui/Loader/Loader";
 import useApiGetResourceById from "../../hooks/useApiGetResourceById";
 import ExpandMoreIcon from "@mui/icons-material/ExpandMore";
-import './styles/charactersDetail.css'
-import { Result as ResultPeople } from "../../interfaces/People";
+import { Result as ResultCharacter } from "../../interfaces/Character";
+import { ResourceType } from "../../components/types/ResourceType";
 
 const ItemCharacter = lazy(() => import('../../components/characters/ItemCharacter'));
 const ItemFilmsCharacter = lazy(() => import('../../components/films/ItemFilmCharacter'));
-// const ItemPlanet = lazy(() => import('../../components/planets/ItemPlanet'));
+const ItemPlanet = lazy(() => import('../../components/planets/ItemPlanet'));
 // const TableStarships = lazy(() => import('../../components/starships/TableStarships'));
 // const TableVehicles = lazy(() => import('../../components/vehicles/TableVehicles'));
 
+import './styles/charactersDetail.css'
 
 const CharacterDetail = () => {
     const { id } = useParams();
-    const { data, loading } = useApiGetResourceById<ResultPeople>({ id: id, resource: "people" });
+    const { data, loading } = useApiGetResourceById<ResultCharacter>({ id: id, resource: ResourceType.People });
 
     return (
         <>
@@ -38,7 +39,7 @@ const CharacterDetail = () => {
                             <Suspense>
 
                                 <ItemCharacter item={data} />
-                                {/* <ItemPlanet url={data.homeworld} /> */}
+                                <ItemPlanet url={data?.homeworld} />
                             </Suspense>
                         </div>
                         <div className="container-div">

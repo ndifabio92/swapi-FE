@@ -1,13 +1,13 @@
 import { Pagination } from "@mui/material";
 import { getTotalPages, viewRegisters } from "../../shared/paginator";
 import './styles/paginator.css'
-import { People } from "../../interfaces/People";
-import { Films } from "../../interfaces/Film";
+import { Character } from "../../interfaces/Character";
+import { Film } from "../../interfaces/Film";
 
 interface Props {
     page: number,
     handlePageChange: (page: number) => void,
-    registers: People | Films | null
+    registers: Character | Film | null
 }
 
 

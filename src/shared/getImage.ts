@@ -13,13 +13,14 @@ interface Props {
 
 const images: { [key: string]: { [key: string]: string } } = {
     "films": FILMS,
-    "characters": CHARACTERS,
+    "charactes": CHARACTERS,
     "planets": PLANETS,
     "vehicles": VEHICLES,
     "starships": STARSHIPS
 };
 
 export const getImage = ({ resource, title }: Props) => {
+    console.log(resource, title)
     if (title === undefined) {
         return image_not_found;
     }

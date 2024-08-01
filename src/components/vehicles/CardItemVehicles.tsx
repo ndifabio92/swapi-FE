@@ -4,13 +4,14 @@ import { Vehicle } from '../../interfaces/Vehicle';
 
 import '../styles/cards.css';
 import '../styles/img.css';
+import { ResourceType } from '../types/ResourceType';
 
 
 export const CardItemVehicles = ({ item }: { item: Vehicle }) => {
     return (
         <Card className="root card">
             <div className="container-img">
-                <img className="img-card" src={getImage({ resource: "vehicles", title: item.name })} alt={item.name} />
+                <img className="img-card" src={getImage({ resource: ResourceType.Vehicles, title: item.name })} alt={item.name} />
             </div>
             <CardContent>
                 <Typography className="title">{item.name}</Typography>
