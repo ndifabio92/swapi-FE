@@ -1,15 +1,15 @@
-FROM --platform=$BUILDPLATFORM node:18.16-alpine3.17
+FROM node:22-alpine3.19
 
 WORKDIR /app
 
 COPY package.json /app/
 
-RUN yarn install
+RUN npm install
 
 COPY . .
 
-RUN yarn build
+RUN npm build
 
 EXPOSE 5173
 
-CMD ["yarn","dev"]
+CMD ["npm","run","dev"]

@@ -3,7 +3,7 @@
 }
 
 .container-header {
-  display: flex ;
+  display: flex;
   justify-content: space-between;
   padding: 0 !important;
 }
@@ -27,4 +27,8 @@
 
 .btn-navbar:hover {
   color: yellow;
+}
+
+.MuiPaper-root {
+  background-color: black !important;
 }
