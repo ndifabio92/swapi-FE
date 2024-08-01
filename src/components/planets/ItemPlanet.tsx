@@ -8,8 +8,8 @@ import './styles/itemPlanet.css'
 import { ResourceType } from '../types/ResourceType';
 
 const ItemPlanet = ({ url }: { url: string | undefined }) => {
-    // eslint-disable-next-line @typescript-eslint/no-unused-vars
-    const { data, loading, error } = useApiGetByUrl<Planet>(url);
+
+    const { data, error } = useApiGetByUrl<Planet>(url);
     if (error) swalAlert({ icon: 'error', title: 'Error', text: 'The API call attempt failed.' });
     return (
         <div className='container-planet'>
